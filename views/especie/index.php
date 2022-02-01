@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\EspecieSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Especies';
+$this->title = 'Especies jajaj';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="especie-index">
