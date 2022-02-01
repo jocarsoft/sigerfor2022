@@ -103,7 +103,7 @@ class PlanesManejo extends \yii\db\ActiveRecord
             'volapr' => 'Cantidad aprobada para el aprovechamiento',
             'unimed' => 'Unidad de medida',
             'finali' => 'Finalidad de aprovechamiento',
-            'id_regente' => 'Id Regente',
+            'id_regente' => 'Regente',
             'numrgt' => 'N° de registro del regente que elaboró documento',
             'nomrgt' => 'Nombre de regente que elaboró documento de gestión',
             'dnirgt' => 'N° DNI del regente forestal',
