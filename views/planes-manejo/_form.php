@@ -4,7 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Constantesmod;
-use yii\jui\DatePicker;
+use app\models\Regente;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\PlanesManejo */
 /* @var $form yii\widgets\ActiveForm */
@@ -37,58 +38,19 @@ use yii\jui\DatePicker;
                                 <div class="form-card">
                                     
                                     <?= $form->field($model, 'contrato')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'fecsol')->input('date') ?>     
                                     
-                                    <?= $form->field($model, 'fecsol')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-                                        // ... puedes configurar más propiedades del DatePicker aquí
-    ])
-
-    ?>
+                                    <?= $form->field($model, 'fecio')->input('date') ?>    
+                                    <?= $form->field($model, 'fecita')->input('date') ?> 
                                     
-                                    <?= $form->field($model, 'fecio')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-                                    // ... puedes configurar más propiedades del DatePicker aquí
-    ])
-
-    ?>
-                                    
-                                    <?= $form->field($model, 'fecita')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-
-
-        
-
-        // ... puedes configurar más propiedades del DatePicker aquí
-    ])
-
-    ?>
-                                                                 
+                                                      
                                 </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
                             </fieldset>
                             
                             <fieldset>
                                 <div class="form-card">
+
+                                
                                     <?= $form ->field($model, 'tdleg')->dropDownList(
                                         
                                         ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TDLEG','tabla'=>'ddplanes'])->all(),'CODE','DESCRIPCION'),
@@ -96,20 +58,11 @@ use yii\jui\DatePicker;
                                             'prompt'=>'Seleccionar...',
                                         ]) ;
                                     ?>
-                                    <?= $form->field($model, 'docleg')->textInput(['maxlength' => true]) ?>    
-                                    <?= $form->field($model, 'fecleg')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-                                    // ... puedes configurar más propiedades del DatePicker aquí
-    ])
-
-    ?>
+                                    <?= $form->field($model, 'docleg')->textInput(['maxlength' => true]) ?>  
+                                    
+                                    
+                                    <?= $form->field($model, 'fecleg')->input('date') ?> 
+                                    
                                     <?= $form ->field($model, 'nomdis')->textInput(['maxlength' => true]) ?>
                                     
                                                                     
@@ -133,33 +86,11 @@ use yii\jui\DatePicker;
                                         ]) ;
                                     ?>
                                     <?= $form->field($model, 'nump')->textInput() ?>
-                                    <?= $form->field($model, 'fecini')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-                                    // ... puedes configurar más propiedades del DatePicker aquí
-    ])
 
-    ?>
+                                    <?= $form->field($model, 'fecini')->input('date') ?> 
                                     
-                                    <?= $form->field($model, 'fecter')->widget(\yii\jui\DatePicker::className(), [
-                                    // si estás usando bootstrap, la siguiente linea asignará correctamente el estilo del campo de entrada
-                                    'options' => ['class' => 'form-control'],  
-                                    'language' => 'es',
-                                    //'format' => 'yyyy-mm-dd hh:ii',
-                                    'dateFormat' => 'yyyy-MM-dd', 
-                                    // 'defaultTimeZone' => 'Español(Perú)',
-                                    //'timeFormat'=>'HH:mm:ss',
-                                    //'datetimeFormat'=>'yyyy-MM-dd HH:mm:ss',
-                                    // ... puedes configurar más propiedades del DatePicker aquí
-    ])
-
-    ?>
+                                    <?= $form->field($model, 'fecter')->input('date') ?> 
+                                   
                                     
                                                                         
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
@@ -189,7 +120,13 @@ use yii\jui\DatePicker;
 
                             <fieldset>
                                 <div class="form-card">
-                                    <?= $form->field($model, 'id_regente')->textInput() ?>
+                                    
+                                    <?= $form ->field($model, 'id_regente')->dropDownList(
+                                            ArrayHelper::map(Regente::find()->all(),'id','nomrgt'),
+                                            [
+                                            'prompt'=>'Seleccionar...',
+                                            ]) ;
+                                            ?>
                                     <?= $form->field($model, 'numrgt')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'nomrgt')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'dnirgt')->textInput(['maxlength' => true]) ?>
