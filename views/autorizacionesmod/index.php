@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AutorizacionesmodSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Autorizaciones';
+$this->title = 'Autorizaciones probando';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="autorizacionesmod-index">
