@@ -4,8 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Constantesmod;
-use dosamigos\datepicker\DatePicker;
-use dosamigos\datetimepicker\DateTimePicker;
 
 
 
@@ -53,31 +51,8 @@ use dosamigos\datetimepicker\DateTimePicker;
 
                                         <div class="col-md-6">
                                        
-                                        <?=  $form -> field ( $model , 'FECONT' )-> widget (
-                                                DatePicker :: className (), [
-                                                    'inline' => true,
-                                                    'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                        'date'=> 'Y-m-d',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       'todayBtn' => true,
-                                                       'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        'datetimeFormat'=>'yyyy-MM-dd',
-                                                    ]
-                                            ]); ?>
+                                        <?= $form->field($model, 'FECONT')->input('date') ?>
+                                       
                                         </div>
 
                                         <div class="col-md-6">
@@ -149,33 +124,8 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                        <?=  $form -> field ( $model , 'FECLEG' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
-                                        
-                                            
+                                        <?= $form->field($model, 'FECLEG')->input('date') ?>
+                                    
                                         </div>
 
                                         <div class="col-md-6">
@@ -238,31 +188,9 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                        <?=  $form -> field ( $model , 'FECINI' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
+                                        
+                                        <?= $form->field($model, 'FECINI')->input('date') ?>
+                                        
                                         </div>
                                     </div>
   
@@ -275,35 +203,8 @@ use dosamigos\datetimepicker\DateTimePicker;
                                     <div class="row">
                                         <div class="col-md-6">
                                                                                                                                
-                                        
-                                           <?=  $form -> field ( $model , 'FECTER' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
-
-                                            
-
+                                        <?= $form->field($model, 'FECTER')->input('date') ?>
+                                           
                                         </div>
 
                                         <div class="col-md-6">
@@ -362,31 +263,8 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                        <?=  $form -> field ( $model , 'FECMOD' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
+                                        <?= $form->field($model, 'FECMOD')->input('date') ?>
+                                       
                                         </div>
 
                                         <div class="col-md-6">
@@ -408,31 +286,7 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                        <?=  $form -> field ( $model , 'FECCON' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
+                                        <?= $form->field($model, 'FECCON')->input('date') ?>
                                             
                                         </div>
 
@@ -446,31 +300,10 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6"> 
-                                        <?=  $form -> field ( $model , 'FECOSI' )-> widget (
-                                                DateTimePicker :: className (), [
-                                                    //'inline' => true,
-                                                    //'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                       // 'date'=> 'Y-m-d H:i:s',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       //'todayBtn' => true,
-                                                       // 'pickerPosition' => "bottom-left",
-
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        //'datetimeFormat'=>'yyyy-MM-dd hh:mm:ss',
-                                                    ]
-                                            ]); ?>
+                                       
+                                        <?= $form->field($model, 'FECOSI')->input('date') ?>
+                                       
+                                       
                                         </div>
                                     </div>                                                                     
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> 

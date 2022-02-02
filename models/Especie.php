@@ -62,6 +62,14 @@ class Especie extends \yii\db\ActiveRecord
         return $this->hasOne(CategoryEspecie::className(), ['id' => 'id_categoria']);
     }
 
+    public function getCategoriaNombre() {
+
+        return $this->Categoria->nombre;
+
+}
+
+   
+
     /**
      * Gets query for [[EspeciePlans]].
      *
