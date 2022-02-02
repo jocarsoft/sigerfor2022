@@ -35,6 +35,16 @@ class LoginForm extends Model
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'usuario',
+            'password' => 'clave',
+            'rememberMe' => 'Recordarme',
+        ];
+    }
+
+
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
@@ -73,7 +83,7 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Usuarios::findByUsername($this->username);
         }
 
         return $this->_user;
