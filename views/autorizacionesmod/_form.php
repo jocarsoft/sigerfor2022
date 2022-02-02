@@ -349,8 +349,7 @@ use app\models\Constantesmod;
                                    </div>  
                                 </div>
                                 <input type="button" name="previous" class="previous action-button-previous" value="Regresar" />  
-                               
-                                     <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+                                <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
                                      
                                     </div>
                             </fieldset>
