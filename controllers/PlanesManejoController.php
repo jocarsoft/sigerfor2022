@@ -12,6 +12,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\db\Query;
 
+use yii\filters\AccessControl;
+
 /**
  * PlanesManejoController implements the CRUD actions for PlanesManejo model.
  */
@@ -25,6 +27,22 @@ class PlanesManejoController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [            
+                            'actions' => ['login', 'error'],            
+                            'allow' => true,            
+                        ],            
+                        [            
+                            'actions' => ['logout', 'index'], // add all actions to take guest to login page            
+                            'allow' => true,            
+                            'roles' => ['@'],            
+                        ],            
+                    ],
+               
+                ],
+
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

@@ -7,6 +7,7 @@ use app\models\BitacoraSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * BitacoraController implements the CRUD actions for Bitacora model.
@@ -21,6 +22,21 @@ class BitacoraController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [            
+                            'actions' => ['login', 'error'],            
+                            'allow' => true,            
+                        ],            
+                        [            
+                            'actions' => ['logout', 'index'], // add all actions to take guest to login page            
+                            'allow' => true,            
+                            'roles' => ['@'],            
+                        ],            
+                    ],
+               
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
