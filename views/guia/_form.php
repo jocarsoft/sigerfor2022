@@ -286,9 +286,9 @@ use app\models\Constantesmod;
                                     <?= $form->field($model, 'numlic')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'facpag')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'observ')->textInput(['maxlength' => true]) ?>
-                                    </div>   
-                                    <div class="form-group">
-                                    <input type="button" name="previous" class="previous action-button-previous" value="Regresar" />  
+                                </div>   
+                                    
+                                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />  
                                     <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>    
                             </fieldset>
 
