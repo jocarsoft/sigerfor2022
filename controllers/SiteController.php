@@ -20,14 +20,25 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'rules' => [
+                    [            
+                        'actions' => ['login', 'error'],            
+                        'allow' => true,            
+                    ],            
+                    [            
+                        'actions' => ['logout', 'index'], // add all actions to take guest to login page            
+                        'allow' => true,            
+                        'roles' => ['@'],            
+                    ],            
+                ],
+             /*   'only' => ['logout'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                ],
+                ],*/
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -61,6 +72,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+        /*if (Yii::$app->user->isGuest) {
+            $this->layout = "main-login";    
+            $this->redirect(['site/login']);
+        }*/
+
+        
+
         return $this->render('index');
     }
 
@@ -71,6 +90,9 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+
+        $this->layout = "main-login";
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -93,9 +115,12 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
+        $this->layout = "main-login";
+
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        //return    $this->goBack();
+        $this->redirect(['site/login']);
     }
 
     /**
