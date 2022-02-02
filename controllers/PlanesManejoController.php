@@ -54,6 +54,9 @@ class PlanesManejoController extends Controller
     {
         $buscador = new Buscador();
 
+        $model = new PlanesManejo();
+
+
         if ($this->request->isPost) {
 
             $buscador->load($this->request->post());
@@ -75,7 +78,13 @@ class PlanesManejoController extends Controller
                 return $this->render('create', [
                     'model' => $model,            
                 ]);
-            }else{
+            }else if($model->load($this->request->post())){ //guardamos el plan de manejo
+        
+                         if ($model->save()) {
+                             return $this->redirect(['view', 'id' => $model->id]);
+                         }
+            
+                            }else{
                 return $this->render('vista', [
                     'model' => $buscador,            
                 ]);
@@ -87,7 +96,9 @@ class PlanesManejoController extends Controller
            // if ($model->load($this->request->post()) && $model->save()) {
             //return $this->redirect('index.php?r=planes-manejo/create');
            // }
-        } else{
+        
+        
+        }else{
             return $this->render('vista', [
                 'model' => $buscador,            
             ]);

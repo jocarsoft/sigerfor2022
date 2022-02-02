@@ -7,7 +7,9 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PermisosmodSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Permisos peru gana';
+
+$this->title = 'Permisos';
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="permisosmod-index">
@@ -26,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+         //   'id',
             'SEDDSC',
             'NUMPER',
             'ASIGNA',

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\EspecieSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Especies jajaj';
+$this->title = 'Especies';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="especie-index">
@@ -26,11 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+        //    'id',
             'nombre_comun',
             'nombre_cientifico',
             'familia',
-            'id_categoria',
+           //'CategoriaNombre',
+            [
+                'attribute' => 'categoria',
+                'label' => 'Categoria Especie',
+                'value' =>  'categoria.nombre'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
