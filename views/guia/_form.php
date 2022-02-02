@@ -4,8 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Constantesmod;
-use dosamigos\datepicker\DatePicker;
-use dosamigos\datetimepicker\DateTimePicker;
+
 
 
 /* @var $this yii\web\View */
@@ -73,62 +72,15 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                            
-                                            <?=  $form -> field ( $model , 'fecexp' )-> widget (
-                                                DatePicker :: className (), [
-                                                    'inline' => true,
-                                                    'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                        'date'=> 'Y-m-d',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       'todayBtn' => true,
-                                                       'pickerPosition' => "bottom-left",
+                                        <?= $form->field($model, 'fecexp')->input('date') ?>
 
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        'datetimeFormat'=>'yyyy-MM-dd',
-                                                    ]
-                                            ]); ?>
+                                            
                                             
                                         </div>
 
                                         <div class="col-md-6">
-                                            
-                                            <?=  $form -> field ( $model , 'fecter' )-> widget (
-                                                DatePicker :: className (), [
-                                                    'inline' => true,
-                                                    'class' => 'form-control',
-                                                    'language' => 'es',
-                                                    // en línea también, no está mal 
-                                                    //'inline' = > true, 
-                                                    // modificar plantilla para representación personalizada 
-                                                   'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>' ,
-                                                    'clientOptions' => [
-                                                        //'autoclose' => true,
-                                                        //'autocerrar'=> true,
-                                                        //'dateFormat' => 'yyyy-MM-dd'
-                                                        'date'=> 'Y-m-d',
-                                                       'format' => 'yyyy-mm-dd',
-                                                       'todayBtn' => true,
-                                                       'pickerPosition' => "bottom-left",
+                                        <?= $form->field($model, 'fecter')->input('date') ?>
 
-                                                        
-                                                        //'date'=>'Y-m-d H:i',
-                                                        
-                                                        'todayHighlight' => true,
-                                                        'datetimeFormat'=>'yyyy-MM-dd',
-                                                    ]
-                                            ]); ?>
                                             
                                         </div>
 
