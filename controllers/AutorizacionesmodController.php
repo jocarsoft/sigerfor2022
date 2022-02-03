@@ -32,7 +32,7 @@ class AutorizacionesmodController extends Controller
                             'allow' => true,            
                         ],            
                         [            
-                            'actions' => ['logout', 'index'], // add all actions to take guest to login page            
+                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'], // add all actions to take guest to login page            
                             'allow' => true,            
                             'roles' => ['@'],            
                         ],            
