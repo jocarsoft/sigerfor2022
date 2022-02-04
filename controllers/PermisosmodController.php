@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\filters\AccessControl;
+
 /**
  * PermisosmodController implements the CRUD actions for Permisosmod model.
  */
@@ -22,6 +24,24 @@ class PermisosmodController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [            
+                            'actions' => ['login', 'error'],            
+                            'allow' => true,            
+                        ],            
+                        [            
+                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'], // add all actions to take guest to login page            
+                            'allow' => true,            
+                            'roles' => ['@'],            
+                        ],            
+                    ],
+               
+                ],
+
+
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

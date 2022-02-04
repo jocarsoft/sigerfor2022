@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\bootstrap\Modal;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PlanesManejo */
@@ -62,6 +63,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_usuario',
             'fecha_registro',
         ],
+        
     ]) ?>
+
+     
+        <center><h1>Especie del plan de manejo</h1></center>
+        <?= Html::a('Agregar Especie', ['create', 'especie-plan' => $model->id], ['class' => 'btn btn-primary']) ?>
+      
+
+                
+
+        
+       
+        
+
 
 </div>
