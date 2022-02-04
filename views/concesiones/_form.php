@@ -78,7 +78,14 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'NUMRUC')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 11, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                         </div>
                                     </div>
                                 </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
@@ -102,7 +109,15 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'NRODOC')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
+                                               // 'mask' => '999999999999',
+                                                'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 12, 'greedy' => false]
+
+                                            ]) 
+                                            ?>
+
                                         </div>
 
                                         <div class="col-md-6">
@@ -124,7 +139,13 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'ANOTORG')->textInput() ?>
+                                        <?= $form->field($model, 'ANOTORG')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 4, 'greedy' => false]
+
+                                                ]) 
+                                            ?>
                                         </div>
                                     </div>
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
