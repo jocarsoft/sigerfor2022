@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 
+ * este form es de Planes de manejo
+ */
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;

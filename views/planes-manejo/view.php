@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\bootstrap4\Modal;
+use app\controller\PlanesManejoController;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PlanesManejo */
@@ -89,16 +90,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     </button>
                 </div>
             <div class="modal-body">
-                ...
+
+            
                 <div class="especie-plan-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+                    <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+                    <?= $this->render('_formep', [
+                        'model' => $modeloEPcontrolador ,
+                    ]) ?>
 
-</div>
+                </div>
 
 
             </div>
