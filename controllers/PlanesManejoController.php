@@ -137,7 +137,7 @@ class PlanesManejoController extends Controller
     public function actionView($id)
     {
 
-        //creamos el objeto que sera enviado a la vista Esoecie Plany        
+        //creamos el objeto que sera enviado a la vista Especie Plany        
 
         $modelEP = new EspeciePlan();
         $modelEP->id_plan = $id; //entonces ya estamos enviando un modelo especie relacionado. al form. 
@@ -147,7 +147,7 @@ class PlanesManejoController extends Controller
 
         //aqui se envia info a la vista
         return $this->render('view', [
-            'model' => $this->findModel($id), //$this->findModel($id) esyoy busca en la bd al objecto PlnaesMaenjo por ID y lo envia a la vista. //haremos los mismo pero conEspecies plan
+            'model' => $this->findModel($id), //$this->findModel($id) esto busca en la bd al objeto PlanesMaenjo por ID y lo envia a la vista. //haremos los mismo pero conEspeciesPlan
             'modeloEPcontrolador' => $modelEP, //esto envia un modelo vacio, pero debemos saber que este Especie le corresponde a este plan
         ]);
     }
