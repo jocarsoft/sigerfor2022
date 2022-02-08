@@ -106,7 +106,8 @@ use app\models\Constantesmod;
                                 </div>   
                                 <div class="form-group">
                                             <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
-                                        </div>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
                             </fieldset>
                             
                         <?php ActiveForm::end(); ?>
