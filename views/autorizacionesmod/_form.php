@@ -175,7 +175,19 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'SUPAPR')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'SUPAPR')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>
+
+
                                         </div>
 
                                         <div class="col-md-6">
