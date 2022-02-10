@@ -61,7 +61,7 @@ class EspeciePlan extends \yii\db\ActiveRecord
             'id_plan' => 'Id Plan',
             'id_especie' => 'Id Especie',
             'resapr' => 'Número de resolución que aprueba el plan de manejo forestal',
-            'docges' => 'Docges',
+            'docges' => 'Tipo de plan de manejo forestal',
             'tipdge' => 'Tipo de Documento de Gestión',
             'numpo' => 'Número de resolución que aprueba el plan de manejo forestal',
             'parco' => 'Número de parcela de corta',
