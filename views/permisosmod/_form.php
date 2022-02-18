@@ -53,7 +53,13 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'ANOTORG')->textInput(['maxlength' => true]) ?>
+                                        <?= $form->field($model, 'ANOTORG')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 4, 'greedy' => false]
+
+                                                ]) 
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -82,7 +88,13 @@ use app\models\Constantesmod;
                                 <div class="form-card">
                                     <div class="row">
                                             <div class="col-md-6">
-                                                <?= $form->field($model, 'NUMRUC')->textInput() ?>
+                                                <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 11, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                             </div>
 
                                             <div class="col-md-6">
@@ -99,7 +111,14 @@ use app\models\Constantesmod;
                                             </div>
 
                                             <div class="col-md-6">
-                                                <?= $form->field($model, 'NRODOC')->textInput(['maxlength' => true]) ?>
+                                                
+                                                <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 12, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                             </div>
 
                                             <div class="col-md-6">
@@ -117,7 +136,14 @@ use app\models\Constantesmod;
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'CODCAT')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'CODCAT')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 8, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -139,7 +165,14 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'NROPAR')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'NROPAR')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 8, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -152,12 +185,25 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'SUPAPR')->textInput() ?>
+                                       
+                                        <?= $form->field($model, 'SUPAPR')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>
+                                        
+                                        
+                                        
                                         </div>
                                     </div>                              
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
                             </fieldset>
-
+    
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">

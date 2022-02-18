@@ -30,11 +30,11 @@ use app\models\Constantesmod;
                         <?php $form = ActiveForm::begin(); ?>
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="paso1"><strong>Paso 1</strong></li>
-                                <li id="paso2"><strong>Paso 2</strong></li>
-                                <li id="paso3"><strong>Paso 3</strong></li>
-                                <li id="paso4"><strong>Paso 4</strong></li>
-                                <li id="paso5"><strong>Paso 5</strong></li>
+                                <li class="active" id="paso1"><strong>Item 1</strong></li>
+                                <li id="paso2"><strong>Item 2</strong></li>
+                                <li id="paso3"><strong>Item 3</strong></li>
+                                <li id="paso4"><strong>Item 4</strong></li>
+                                <li id="paso5"><strong>Item 5</strong></li>
                                 <li id="confirm"><strong>Final</strong></li>
                             </ul> <!-- fieldsets -->
                             <fieldset>
@@ -124,6 +124,7 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
+
                                         <?= $form->field($model, 'FECLEG')->input('date') ?>
                                     
                                         </div>
@@ -175,7 +176,19 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'SUPAPR')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'SUPAPR')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>
+
+
                                         </div>
 
                                         <div class="col-md-6">
@@ -369,6 +382,7 @@ use app\models\Constantesmod;
     <?= $form->field($model, 'GCLOUD')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'id_usuario')->textInput() ?>
+
 
     <?= $form->field($model, 'fecha_registro')->textInput() ?>
 </div>-->

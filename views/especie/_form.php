@@ -46,18 +46,7 @@ use yii\widgets\ActiveForm;
     </div>
 </div>
 
-
-
-
-
 <div class="especie-form">
-
-    
-
-    
-
-
-    
 
 
 </div>

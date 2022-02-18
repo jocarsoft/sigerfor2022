@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\PlanesManejo;
+use app\models\EspeciePlan;
 use app\models\TituloHabilitante;
 use app\models\Regente;
 use app\models\Buscador;
@@ -35,7 +36,7 @@ class PlanesManejoController extends Controller
                             'allow' => true,            
                         ],            
                         [            
-                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'], // add all actions to take guest to login page            
+                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'vista' ], // add all actions to take guest to login page            
                             'allow' => true,            
                             'roles' => ['@'],            
                         ],            
@@ -135,8 +136,19 @@ class PlanesManejoController extends Controller
      */
     public function actionView($id)
     {
+
+        //creamos el objeto que sera enviado a la vista Especie Plany        
+
+        $modelEP = new EspeciePlan();
+        $modelEP->id_plan = $id; //entonces ya estamos enviando un modelo especie relacionado. al form. 
+
+        //ahora proceura hacer el registro.  debe estar dentro de este mismo action. ok?
+        //el registro de los datos de especie plan?? 
+
+        //aqui se envia info a la vista
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($id), //$this->findModel($id) esto busca en la bd al objeto PlanesMaenjo por ID y lo envia a la vista. //haremos los mismo pero conEspeciesPlan
+            'modeloEPcontrolador' => $modelEP, //esto envia un modelo vacio, pero debemos saber que este Especie le corresponde a este plan
         ]);
     }
 
@@ -154,6 +166,23 @@ class PlanesManejoController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
          else {
+            $model->loadDefaultValues();
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionCreateEspecies_Plan()
+    {
+        $model = new EspeciePlan();
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
             $model->loadDefaultValues();
         }
 

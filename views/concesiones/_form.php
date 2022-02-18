@@ -27,10 +27,10 @@ use app\models\Constantesmod;
                         <?php $form = ActiveForm::begin(); ?>    
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <lid class="active" id="paso1"><strong>Paso 1</strong></lid>
-                                <lid id="paso2"><strong>Paso 2</strong></lid>
-                                <lid id="paso3"><strong>Paso 3</strong></lid>
-                                <lid id="paso4"><strong>Paso 4</strong></lid>
+                                <lid class="active" id="paso1"><strong>Item 1</strong></lid>
+                                <lid id="paso2"><strong>Item 2</strong></lid>
+                                <lid id="paso3"><strong>Item 3</strong></lid>
+                                <lid id="paso4"><strong>Item 4</strong></lid>
                                 <lid id="confirm"><strong>Finalizar</strong></lid>
                             </ul> <!-- fieldsets -->
 
@@ -78,7 +78,14 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'NUMRUC')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 11, 'greedy' => false]
+
+                                                ])
+                                                ?>
                                         </div>
                                     </div>
                                 </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
@@ -102,7 +109,15 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'NRODOC')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
+                                               // 'mask' => '999999999999',
+                                                'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 12, 'greedy' => false]
+
+                                            ]) 
+                                            ?>
+
                                         </div>
 
                                         <div class="col-md-6">
@@ -124,7 +139,13 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'ANOTORG')->textInput() ?>
+                                        <?= $form->field($model, 'ANOTORG')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 4, 'greedy' => false]
+
+                                                ]) 
+                                            ?>
                                         </div>
                                     </div>
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />

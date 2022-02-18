@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+use yii\bootstrap4\Modal;
+use app\controller\PlanesManejoController;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PlanesManejo */
@@ -62,6 +66,47 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_usuario',
             'fecha_registro',
         ],
+        
     ]) ?>
 
+        <p >    
+            <center><h1>Especie del plan de manejo</h1></center>
+        </p>
+
+        <p  align="center" >
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPM">
+            Agregar Especie
+            </button>
+        </p>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalPM" tabindex="-1" aria-labelledby="ModalPM" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg ">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalPM">Especie Plan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <div class="modal-body">
+
+            
+                <div class="especie-plan-create">
+
+                    <h1><?= Html::encode($this->title) ?></h1>
+
+                    <?= $this->render('_formep', [
+                        'model' => $modeloEPcontrolador ,
+                    ]) ?>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+                
 </div>
+
+
