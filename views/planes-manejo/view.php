@@ -69,20 +69,23 @@ $this->params['breadcrumbs'][] = $this->title;
         
     ]) ?>
 
-     
-        <center><h1>Especie del plan de manejo</h1></center>
+        <p >    
+            <center><h1>Especie del plan de manejo</h1></center>
+        </p>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Agregar Especie
-        </button>
+        <p  align="center" >
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPM">
+            Agregar Especie
+            </button>
+        </p>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ModalPM" tabindex="-1" aria-labelledby="ModalPM" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg ">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Especie</h5>
+                    <h5 class="modal-title" id="ModalPM">Especie Plan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -104,18 +107,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         </div>
                 
-      
-
-                
-
-        
-       
-        
-
-
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="js/wizard_js.js"></script>
