@@ -8,6 +8,7 @@ use app\models\ConcesionesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Constantesmod;
 
 
 use yii\filters\AccessControl;
@@ -97,7 +98,11 @@ class ConcesionesController extends Controller
                 $modelTh = new TituloHabilitante();
                 $modelTh->sede = $model->RESREG;
                 $modelTh->contrato = $model->CONTRA;
-                $modelTh->tipo_contrato = ('Concesion');
+                $datosp = Constantesmod::find()
+                ->where(['campo' => 'TIPCON','tabla'=>'ddconcesiones','CODE'=>$model->TIPCON])
+                ->one();
+                $modelTh->tipo_contrato = ' Concesion - ' .$datosp->DESCRIPCION;
+                
                 $modelTh->nombre_titular = $model->NOMTIT;
                 $modelTh->superficie = $model->SUPAPR;
                 $modelTh->situacion = $model->SITUAC;

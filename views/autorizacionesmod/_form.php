@@ -124,6 +124,7 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
+
                                         <?= $form->field($model, 'FECLEG')->input('date') ?>
                                     
                                         </div>
@@ -381,6 +382,7 @@ use app\models\Constantesmod;
     <?= $form->field($model, 'GCLOUD')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'id_usuario')->textInput() ?>
+
 
     <?= $form->field($model, 'fecha_registro')->textInput() ?>
 </div>-->

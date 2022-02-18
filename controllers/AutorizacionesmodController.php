@@ -8,6 +8,7 @@ use app\models\AutorizacionesmodSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Constantesmod;
 
 use yii\filters\AccessControl;
 
@@ -93,7 +94,11 @@ class AutorizacionesmodController extends Controller
                 $modelTh = new TituloHabilitante();
                 $modelTh->sede = $model->SEDDSC;
                 $modelTh->contrato = $model->NUMAUT;
-                $modelTh->tipo_contrato = ('Autorizacion');
+
+                $datosp = Constantesmod::find()
+                ->where(['campo' => 'TIPO ASIGNA','tabla'=>'ddautorizaciones','CODE'=>$model->ASIGNA])
+                ->one();
+                $modelTh->tipo_contrato = 'Autorizacion - ' .$datosp->DESCRIPCION;
                 $modelTh->nombre_titular = $model->NOMTIT;
                 $modelTh->superficie = $model->SUPAPR;
                 $modelTh->situacion = $model->SITUAC;
