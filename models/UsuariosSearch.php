@@ -17,8 +17,8 @@ class UsuariosSearch extends Usuarios
     public function rules()
     {
         return [
-            [['id', 'edad'], 'integer'],
-            [['nombre', 'apellidos', 'foto'], 'safe'],
+            [['id'], 'integer'],
+            [['nombres', 'apellidos', ], 'safe'],
         ];
     }
 
@@ -59,12 +59,12 @@ class UsuariosSearch extends Usuarios
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'edad' => $this->edad,
+           /* 'edad' => $this->edad,*/
         ]);
 
-        $query->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'apellidos', $this->apellidos])
-            ->andFilterWhere(['like', 'foto', $this->foto]);
+        $query->andFilterWhere(['like', 'nombres', $this->nombres])
+            ->andFilterWhere(['like', 'apellidos', $this->apellidos]);
+            /*->andFilterWhere(['like', 'foto', $this->foto]);*/
 
         return $dataProvider;
     }
