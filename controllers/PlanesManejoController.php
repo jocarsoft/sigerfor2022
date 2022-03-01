@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-
+use yii\data\ActiveDataProvider;
 use app\models\PlanesManejo;
 use app\models\EspeciePlan;
 use app\models\EspeciePlanSearch;
@@ -156,7 +156,23 @@ class PlanesManejoController extends Controller
 
         $modelEP->id_plan = $id;
         $searchModel = new EspeciePlanSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        //$dataProvider = $searchModel->search($this->request->queryParams);
+
+        $query = EspeciePlan::find()->where(['id_plan' => $id]);
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'pagination' => [
+                    'pageSize' => 10,
+                ],
+               /* 'sort' => [
+                    'defaultOrder' => [
+                        'created_at' => SORT_DESC,
+                        'title' => SORT_ASC, 
+                    ]
+                ],*/
+            ]);
+
 
 
 
