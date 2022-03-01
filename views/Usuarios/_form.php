@@ -16,6 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'apellidos')->textInput(['maxlength' => true]) ?>
 
+
+
+    
+
+   
      <div class="form-group">
         <?= Html::submitButton('GUARDAR', ['class' => 'btn btn-success']) ?>
     </div>

@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'apellidos') ?>
 
+   
+
     
 
     <div class="form-group">
