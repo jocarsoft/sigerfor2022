@@ -80,7 +80,40 @@ $this->params['breadcrumbs'][] = $this->title;
             </button>
         </p>
 
-        <!-- Modal -->
+        <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'id_plan',
+            //'id_especie',
+            'resapr',
+            'docges',
+            //'tipdge',
+            //'numpo',
+            //'parco',
+            //'produc',
+            //'nomcom',
+            //'nomcie',
+            //'canesp',
+            //'volapr',
+            //'unimed',
+            //'observ',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+
+
+
+
+
+
+            <!-- Modal -->
         <div class="modal fade" id="ModalPM" tabindex="-1" aria-labelledby="ModalPM" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg ">
             <div class="modal-content ">
@@ -91,7 +124,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     </button>
                 </div>
             <div class="modal-body">
-
             
                 <div class="especie-plan-create">
 
@@ -106,6 +138,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         </div>
+    
+    
                 
 </div>
 
