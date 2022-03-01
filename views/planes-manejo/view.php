@@ -107,12 +107,6 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 
-
-
-
-
-
-
             <!-- Modal -->
         <div class="modal fade" id="ModalPM" tabindex="-1" aria-labelledby="ModalPM" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg ">
