@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\Control;
 use yii\helpers\ArrayHelper;
 use app\models\Constantesmod;
+use app\models\Especie;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\EspeciePlan */
@@ -37,7 +38,10 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'id_especie')->textInput() ?>
+                                        <?= $form->field($model, 'id_especie')->dropDownList(
+                                        ArrayHelper::map(Especie::find()->all(),'id','nombre_cientifico'),
+                                        ['prompt' => 'Select']
+                                        ) ?>
                                         </div>
 
                                         <div class="col-md-6">

@@ -88,8 +88,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'id_plan',
-            //'id_especie',
-            'resapr',
+            'id_especie',
+            //'resapr',
             'docges',
             //'tipdge',
             //'numpo',
