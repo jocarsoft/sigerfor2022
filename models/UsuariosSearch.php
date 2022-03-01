@@ -18,11 +18,7 @@ class UsuariosSearch extends Usuarios
     {
         return [
             [['id'], 'integer'],
-<<<<<<< HEAD
             [['nombres', 'apellidos'], 'safe'],
-=======
-            [['nombres', 'apellidos', ], 'safe'],
->>>>>>> d42f829b62c70c48ad78821894654f29ffc03f73
         ];
     }
 
@@ -68,11 +64,7 @@ class UsuariosSearch extends Usuarios
 
         $query->andFilterWhere(['like', 'nombres', $this->nombres])
             ->andFilterWhere(['like', 'apellidos', $this->apellidos]);
-<<<<<<< HEAD
            /* ->andFilterWhere(['like', 'foto', $this->foto]);*/
-=======
-            /*->andFilterWhere(['like', 'foto', $this->foto]);*/
->>>>>>> d42f829b62c70c48ad78821894654f29ffc03f73
 
         return $dataProvider;
     }

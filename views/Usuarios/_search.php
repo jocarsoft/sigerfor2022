@@ -21,11 +21,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'apellidos') ?>
 
-<<<<<<< HEAD
    
 
-=======
->>>>>>> d42f829b62c70c48ad78821894654f29ffc03f73
     
 
     <div class="form-group">

@@ -32,13 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'nombres',
             'apellidos',
-<<<<<<< HEAD
-            /*'edad',*/
-            /*'foto',*/
-=======
-            
->>>>>>> d42f829b62c70c48ad78821894654f29ffc03f73
-        ],
+     ],
     ]) ?>
 
 </div>
