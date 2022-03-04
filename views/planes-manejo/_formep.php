@@ -38,10 +38,11 @@ use app\models\Especie;
                                         </div>
 
                                         <div class="col-md-6">
-                                        <?= $form->field($model, 'id_especie')->dropDownList(
-                                        ArrayHelper::map(Especie::find()->all(),'id','nombre_cientifico'),
-                                        ['prompt' => 'Select']
-                                        ) ?>
+                                            <?= $form->field($model, 'id_especie')->dropDownList(
+                                                ArrayHelper::map(Especie::find()->all(),'id','nombre_cientifico'),
+                                                ['prompt' => 'Seleccionar']
+                                                ) 
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -49,11 +50,22 @@ use app\models\Especie;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'docges')->textInput(['maxlength' => true]) ?>
+                                            <?= $form ->field($model, 'docges')->dropDownList(
+                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'DOCGES','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
+                                            [
+                                                'prompt'=>'Seleccionar...',
+                                            ]) ;
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'tipdge')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form ->field($model, 'tipdge')->dropDownList(
+                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDGE','tabla'=>'ddplanes'])->all(),'CODE','DESCRIPCION'),
+                                                [
+                                                    'prompt'=>'Seleccionar...',
+                                                ]) ;
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
