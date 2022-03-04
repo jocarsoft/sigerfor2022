@@ -7,8 +7,10 @@ use app\models\GuiaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\models\EspecieGuia;
+use app\models\EspecieGuiaSearch;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 
 /**
  * GuiaController implements the CRUD actions for Guia model.
@@ -71,11 +73,60 @@ class GuiaController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
+
     {
+
+        //creamos el objeto que sera enviado a la vista Especie Plany        
+
+        $modelG = new EspecieGuia();
+        $modelG->id_guia = $id; //entonces ya estamos enviando un modelo especie relacionado. al form. 
+
+        if($this->request->isPost){
+            $modelG = new EspecieGuia();
+            if ($modelG->load($this->request->post()) && $modelG->save()){
+
+
+            }
+        }
+
+        $modelG->id_guia = $id;
+        $searchModel = new EspecieGuiaSearch();
+        //$dataProvider = $searchModel->search($this->request->queryParams);
+
+        $query = EspecieGuia::find()->where(['id_guia' => $id]);
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'pagination' => [
+                    'pageSize' => 10,
+                ],
+               /* 'sort' => [
+                    'defaultOrder' => [
+                        'created_at' => SORT_DESC,
+                        'title' => SORT_ASC, 
+                    ]
+                ],*/
+            ]);
+
+
+
+
+        //ahora proceura hacer el registro.  debe estar dentro de este mismo action. ok?
+        //el registro de los datos de especie plan?? 
+
+        //aqui se envia info a la vista
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($id), //$this->findModel($id) esto busca en la bd al objeto PlanesMaenjo por ID y lo envia a la vista. //haremos los mismo pero conEspeciesPlan
+            'modeloGcontrolador' => $modelG, //esto envia un modelo vacio, pero debemos saber que este Especie le corresponde a este plan
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
+
+
+
+
+
 
     /**
      * Creates a new Guia model.
