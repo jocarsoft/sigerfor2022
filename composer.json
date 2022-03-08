@@ -33,7 +33,9 @@
         "codeception/module-yii2": "^1.0.0",
         "codeception/module-asserts": "^1.0.0",
         "2amigos/yii2-date-picker-widget": "~1.0",
-        "2amigos/yii2-date-time-picker-widget": "*"
+        "2amigos/yii2-date-time-picker-widget": "*",
+        "kartik-v/yii2-export": "dev-master"
+        
 
     },
     "config": {
