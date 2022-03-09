@@ -33,13 +33,18 @@
         "codeception/module-yii2": "^1.0.0",
         "codeception/module-asserts": "^1.0.0",
         "2amigos/yii2-date-picker-widget": "~1.0",
-        "2amigos/yii2-date-time-picker-widget": "*"
+        "2amigos/yii2-date-time-picker-widget": "*",
+        "kartik-v/yii2-export": "dev-master"
+        
 
     },
     "config": {
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     },
     "scripts": {
