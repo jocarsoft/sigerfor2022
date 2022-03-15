@@ -19,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Crear Permisos', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Exportar Excel', [''], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Exportar Excel', [''], ['class' => 'btn btn-info']) ?>
+        <?= Html::a('Exportar PDF', [''], ['class' => 'btn btn-danger']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

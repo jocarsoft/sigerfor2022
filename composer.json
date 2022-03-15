@@ -22,8 +22,11 @@
         "hscstudio/yii2-export": "*"  ,
         "kartik-v/yii2-bootstrap5-dropdown": "@dev",
         "kartik-v/yii2-export": "dev-master" ,
-        "kartik-v/yii2-mpdf": "dev-master"   
+        "kartik-v/yii2-mpdf": "dev-master" ,
+        "phpoffice/phpexcel": "1.8.*",
+        "mpdf/mpdf":"*"
     },
+    
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
         "yiisoft/yii2-gii": "~2.2.0",
@@ -37,9 +40,6 @@
         "codeception/module-asserts": "^1.0.0",
         "2amigos/yii2-date-picker-widget": "~1.0",
         "2amigos/yii2-date-time-picker-widget": "*"
-        
-        
-
     },
     "config": {
         "process-timeout": 1800,
