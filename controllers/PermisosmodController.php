@@ -114,14 +114,6 @@ class PermisosmodController extends Controller
 
                 $modelTh->save();
 
-
-
-
-
-
-
-
-
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -182,4 +174,6 @@ class PermisosmodController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    
 }

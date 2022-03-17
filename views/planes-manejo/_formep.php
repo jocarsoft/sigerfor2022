@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\Control;
 use yii\helpers\ArrayHelper;
 use app\models\Constantesmod;
+use app\models\Especie;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\EspeciePlan */
@@ -37,7 +38,11 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'id_especie')->textInput() ?>
+                                            <?= $form->field($model, 'id_especie')->dropDownList(
+                                                ArrayHelper::map(Especie::find()->all(),'id','nombre_cientifico'),
+                                                ['prompt' => 'Seleccionar']
+                                                ) 
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -45,11 +50,22 @@ use app\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'docges')->textInput(['maxlength' => true]) ?>
+                                            <?= $form ->field($model, 'docges')->dropDownList(
+                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'DOCGES','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
+                                            [
+                                                'prompt'=>'Seleccionar...',
+                                            ]) ;
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'tipdge')->textInput(['maxlength' => true]) ?>
+                                            
+                                            <?= $form ->field($model, 'tipdge')->dropDownList(
+                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDGE','tabla'=>'ddplanes'])->all(),'CODE','DESCRIPCION'),
+                                                [
+                                                    'prompt'=>'Seleccionar...',
+                                                ]) ;
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -106,7 +122,7 @@ use app\models\Constantesmod;
                                 </div>   
                                 <div class="form-group">
                                             <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                           
                                 </div>
                             </fieldset>
                             

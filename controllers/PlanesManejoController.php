@@ -1,9 +1,10 @@
 <?php
 
 namespace app\controllers;
-
+use yii\data\ActiveDataProvider;
 use app\models\PlanesManejo;
 use app\models\EspeciePlan;
+use app\models\EspeciePlanSearch;
 use app\models\TituloHabilitante;
 use app\models\Regente;
 use app\models\Buscador;
@@ -134,6 +135,9 @@ class PlanesManejoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
+
+
     public function actionView($id)
     {
 
@@ -142,6 +146,36 @@ class PlanesManejoController extends Controller
         $modelEP = new EspeciePlan();
         $modelEP->id_plan = $id; //entonces ya estamos enviando un modelo especie relacionado. al form. 
 
+        if($this->request->isPost){
+            $modelEP = new EspeciePlan();
+            if ($modelEP->load($this->request->post()) && $modelEP->save()){
+
+
+            }
+        }
+
+        $modelEP->id_plan = $id;
+        $searchModel = new EspeciePlanSearch();
+        //$dataProvider = $searchModel->search($this->request->queryParams);
+
+        $query = EspeciePlan::find()->where(['id_plan' => $id]);
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'pagination' => [
+                    'pageSize' => 10,
+                ],
+               /* 'sort' => [
+                    'defaultOrder' => [
+                        'created_at' => SORT_DESC,
+                        'title' => SORT_ASC, 
+                    ]
+                ],*/
+            ]);
+
+
+
+
         //ahora proceura hacer el registro.  debe estar dentro de este mismo action. ok?
         //el registro de los datos de especie plan?? 
 
@@ -149,6 +183,8 @@ class PlanesManejoController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id), //$this->findModel($id) esto busca en la bd al objeto PlanesMaenjo por ID y lo envia a la vista. //haremos los mismo pero conEspeciesPlan
             'modeloEPcontrolador' => $modelEP, //esto envia un modelo vacio, pero debemos saber que este Especie le corresponde a este plan
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -157,6 +193,10 @@ class PlanesManejoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+
+
+
+
     public function actionCreate()
     {
         $model = new PlanesManejo();

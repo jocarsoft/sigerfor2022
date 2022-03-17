@@ -21,6 +21,7 @@
         "hail812/yii2-adminlte3": "*",
         "hscstudio/yii2-export": "*"   
     },
+    
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
         "yiisoft/yii2-gii": "~2.2.0",
@@ -34,12 +35,14 @@
         "codeception/module-asserts": "^1.0.0",
         "2amigos/yii2-date-picker-widget": "~1.0",
         "2amigos/yii2-date-time-picker-widget": "*"
-
     },
     "config": {
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     },
     "scripts": {

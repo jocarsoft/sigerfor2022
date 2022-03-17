@@ -2,7 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use app\controller\GuiaController;
+use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+use yii\bootstrap4\Modal;
 /* @var $this yii\web\View */
 /* @var $model app\models\Guia */
 
@@ -68,5 +71,69 @@ $this->params['breadcrumbs'][] = $this->title;
             'fecha_registro',
         ],
     ]) ?>
+
+    <p >    
+        <center><h1>Especie Guia</h1></center>
+    </p>
+
+    <p  align="center" >
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalG">
+        Agregar Especie Guia
+        </button>
+    </p>
+
+    <?= GridView::widget([
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+
+        'id',
+        'id_guia',
+        'id_especie_plan',
+        //'resapr',
+       // 'docges',
+        //'tipdge',
+        //'numpo',
+        //'parco',
+        'produc',
+        //'nomcom',
+        //'nomcie',
+        //'canesp',
+        //'volapr',
+        //'unimed',
+        //'observ',
+
+        ['class' => 'yii\grid\ActionColumn'],
+    ],
+]); ?>
+
+
+        <!-- Modal -->
+    <div class="modal fade" id="ModalG" tabindex="-1" aria-labelledby="ModalG" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalG">Especie Guia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+        
+            <div class="especie-guia-create">
+
+                <h1><?= Html::encode($this->title) ?></h1>
+
+                <?= $this->render('_formguia', [
+                    'model' => $modeloGcontrolador ,
+                ]) ?>
+
+            </div>
+
+        </div>
+    </div>
+    
 
 </div>
