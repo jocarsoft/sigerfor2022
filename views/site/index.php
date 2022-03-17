@@ -19,21 +19,16 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
         <div class="col-lg-6">
             <?= \hail812\adminlte\widgets\Alert::widget([
                 'type' => 'success',
-                'body' => '<h3>Congratulations!</h3>',
+                'body' => '<h3>Bienvenidos al Sistema</h3>',
             ]) ?>
             <?= \hail812\adminlte\widgets\Callout::widget([
                 'type' => 'danger',
-                'head' => 'I am a danger callout!',
-                'body' => 'There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.'
+                'head' => 'SIGERFOR',
+                'body' => 'Sistema de Gerencia Forestal.'
             ]) ?>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-4 col-sm-6 col-12">
-        
-         
-        
         <?php
 
         $resultado= TituloHabilitante::find()->count();
@@ -58,57 +53,86 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 
         ?>
 
-
-        <div class="small-box bg-success">
+    
+    
+    <h5 class="mb-2 mt-4">Modulos</h5>
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3><?php echo $resultado; ?></h3>
 
-                <p>Bounce Rate</p>
+                <p>Titulo Habilitante</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+              <i class="fas fa-chart-pie"></i>
               </div>
               <a href="index.php?r=titulo-habilitante%2Findex" class="small-box-footer">
-                More info <i class="fas fa-arrow-circle-right"></i>
+                Ir <i class="fas fa-arrow-circle-right"></i>
               </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?php echo $resultado2; ?><sup style="font-size: 20px"></sup></h3>
+
+                <p>Autorizaciones</p>
+              </div>
+              <div class="icon">
+              <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=autorizacionesmod%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><?php echo $resultado3; ?></h3>
+
+                <p>Permisos</p>
+              </div>
+              <div class="icon">
+              <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=permisosmod%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><?php echo $resultado4; ?></h3>
+
+                <p>Concesiones</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=concesiones%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
+        <!-- /.row -->
 
-
-
-        <?=\hail812\adminlte\widgets\InfoBox::widget([     
-                    
-               'text' => 'Titulo Habilitante',
-               'number' => $resultado,
-                'icon' => 'far fa-copy',
-                //'link'=>Url::to("titulo-habilitante/index"),
-               // 'link' => ['titulo-habilitante/index'],
-                //'theme' => 'gradient-success',
-            ]) ?>
-
-        </div>
-
-        
-
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Autorizaciones',
-                'number' => $resultado2,
-                'icon' => 'far fa-copy',
-            ]) ?>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Permisos',
-                'number' => $resultado3,
-                'icon' => 'far fa-copy',
-            ]) ?>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Concesiones',
-                'number' => $resultado4,
-                'icon' => 'far fa-copy',
-            ]) ?>
-        </div>
-    </div>
 </div>
+
+
+
+
+
+
+
