@@ -14,7 +14,7 @@ use dosamigos\datetimepicker\DateTimePicker;
 
 <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
-<link  rel="stylesheet" href="css/wizard_css.css" />
+<link  rel="stylesheet" href="../css/wizard_css.css" />
 
 <div class="container-fluid" id="grad1">
     <div class="row justify-content-center mt-0">
@@ -96,4 +96,4 @@ use dosamigos\datetimepicker\DateTimePicker;
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="js/wizard_js.js"></script>
+<script src="../js/wizard_js.js"></script>
