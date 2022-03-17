@@ -1,5 +1,19 @@
 <?php
-$this->title = 'Starter Page';
+
+use yii\widgets\ActiveForm;
+use yii\db\ActiveRecord;
+use backend\models\TituloHabilitante;
+use backend\models\Autorizacionesmod;
+use backend\models\Permisosmod;
+use backend\models\Concesionesmod;
+use backend\Controlador\Action;
+use yii\db\Query;
+use yii\db\Command;
+use yii\db\QueryBuilder;
+
+
+
+$this->title = 'Inicio';
 $this->params['breadcrumbs'] = [['label' => $this->title]];
 ?>
 <div class="container-fluid">
@@ -7,49 +21,113 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
         <div class="col-lg-6">
             <?= \hail812\adminlte\widgets\Alert::widget([
                 'type' => 'success',
-                'body' => '<h3>Congratulations!</h3>',
+                'body' => '<h3>Bienvenidos al Sistema</h3>',
             ]) ?>
             <?= \hail812\adminlte\widgets\Callout::widget([
                 'type' => 'danger',
-                'head' => 'I am a danger callout!',
-                'body' => 'There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.'
+                'head' => 'SIGERFOR',
+                'body' => 'Sistema de Gerencia Forestal.'
             ]) ?>
         </div>
     </div>
 
+        <?php
 
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\SmallBox::widget([
-                'title' => '150',
-                'text' => 'New Orders',
-                'icon' => 'fas fa-shopping-cart',
-            ]) ?>
+        $resultado= TituloHabilitante::find()->count();
+
+        ?>
+
+        <?php
+
+        $resultado2= Autorizacionesmod::find()->count();
+
+        ?>
+
+        <?php
+
+        $resultado3= Permisosmod::find()->count();
+
+        ?>
+
+        <?php
+
+        $resultado4= Concesionesmod::find()->count();
+
+        ?>
+
+    
+    
+    <h5 class="mb-2 mt-4">Modulos</h5>
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><?php echo $resultado; ?></h3>
+
+                <p>Titulo Habilitante</p>
+              </div>
+              <div class="icon">
+              <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=titulo-habilitante%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?php echo $resultado2; ?><sup style="font-size: 20px"></sup></h3>
+
+                <p>Autorizaciones</p>
+              </div>
+              <div class="icon">
+              <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=autorizacionesmod%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><?php echo $resultado3; ?></h3>
+
+                <p>Permisos</p>
+              </div>
+              <div class="icon">
+              <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=permisosmod%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><?php echo $resultado4; ?></h3>
+
+                <p>Concesiones</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <a href="index.php?r=concesiones%2Findex" class="small-box-footer">
+                Ir <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?php $smallBox = \hail812\adminlte\widgets\SmallBox::begin([
-                'title' => '150',
-                'text' => 'New Orders',
-                'icon' => 'fas fa-shopping-cart',
-                'theme' => 'success'
-            ]) ?>
-            <?= \hail812\adminlte\widgets\Ribbon::widget([
-                'id' => $smallBox->id.'-ribbon',
-                'text' => 'Ribbon',
-                'theme' => 'warning',
-                'size' => 'lg',
-                'textSize' => 'lg'
-            ]) ?>
-            <?php \hail812\adminlte\widgets\SmallBox::end() ?>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\SmallBox::widget([
-                'title' => '44',
-                'text' => 'User Registrations',
-                'icon' => 'fas fa-user-plus',
-                'theme' => 'gradient-success',
-                'loadingStyle' => true
-            ]) ?>
-        </div>
-    </div>
+        <!-- /.row -->
+
 </div>
