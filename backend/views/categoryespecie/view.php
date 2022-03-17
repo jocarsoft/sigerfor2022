@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use app\models\Categoryespecie;
+use backend\models\Categoryespecie;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Categoryespecie */

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use app\models\TituloHabilitante;
+use backend\models\TituloHabilitante;
 /* @var $this yii\web\View */
 /* @var $model app\models\TituloHabilitante */
 

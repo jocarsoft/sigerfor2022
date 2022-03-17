@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use app\controller\GuiaController;
+use backend\controller\GuiaController;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\bootstrap4\Modal;

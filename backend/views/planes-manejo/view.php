@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\bootstrap4\Modal;
-use app\controller\PlanesManejoController;
+use backend\controller\PlanesManejoController;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PlanesManejo */
