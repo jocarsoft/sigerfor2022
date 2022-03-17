@@ -57,4 +57,9 @@ class CategoryEspecie extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Especie::className(), ['id_categoria' => 'id']);
     }
+
+    public function getEspeciesCantidad()
+    {
+        return $this->Count();
+    }
 }

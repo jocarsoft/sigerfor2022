@@ -10,6 +10,9 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+
+use app\models\Guia;
+
 class SiteController extends Controller
 {
     /**
@@ -78,7 +81,7 @@ class SiteController extends Controller
             $this->redirect(['site/login']);
         }*/
 
-        
+        $cant = new Guia();
 
         return $this->render('index');
     }
