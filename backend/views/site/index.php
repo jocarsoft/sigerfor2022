@@ -7,9 +7,7 @@ use backend\models\Autorizacionesmod;
 use backend\models\Permisosmod;
 use backend\models\Concesionesmod;
 use backend\Controlador\Action;
-use yii\db\Query;
-use yii\db\Command;
-use yii\db\QueryBuilder;
+
 
 
 
@@ -70,7 +68,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
               <div class="icon">
               <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="index.php?r=titulo-habilitante%2Findex" class="small-box-footer">
+              <a href="http://localhost/sigerfor2022/backend/web/titulo-habilitante/index" class="small-box-footer">
                 Ir <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -87,7 +85,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
               <div class="icon">
               <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="index.php?r=autorizacionesmod%2Findex" class="small-box-footer">
+              <a href="http://localhost/sigerfor2022/backend/web/autorizacionesmod/index" class="small-box-footer">
                 Ir <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -104,7 +102,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
               <div class="icon">
               <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="index.php?r=permisosmod%2Findex" class="small-box-footer">
+              <a href="http://localhost/sigerfor2022/backend/web/permisosmod/index" class="small-box-footer">
                 Ir <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -121,7 +119,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
               <div class="icon">
                 <i class="fas fa-chart-pie"></i>
               </div>
-              <a href="index.php?r=concesiones%2Findex" class="small-box-footer">
+              <a href="http://localhost/sigerfor2022/backend/web/concesiones/index" class="small-box-footer">
                 Ir <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
