@@ -79,7 +79,7 @@
                     ['label' => 'Guias', 'url' => ['/guia/index']],
                     ['label' => 'Especie Guias', 'url' => ['/especie-guia/index']],
                     ['label' => 'Gestion', 'header' => true],
-                    ['label' => 'Usuarios', 'iconStyle', 'url'=> ['/usuarios/index']],
+                   // ['label' => 'Usuarios', 'iconStyle', 'url'=> ['/usuarios/index']],
                     ['label' => 'Bitácora', 'iconStyle', 'url'=> ['/bitacora/index']],
 
                    // ['label' => 'LABELS', 'header' => true],
