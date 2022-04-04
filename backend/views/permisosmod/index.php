@@ -1,7 +1,11 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\helpers\Url;
+//use yii\grid\GridView;
+use yii\grid\ActionColumn;
+use kartik\grid\GridView;
+use kartik\select2\Select2; 
 
 
 /* @var $this yii\web\View */
@@ -74,6 +78,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
+
+?>
 
 
 </div>
