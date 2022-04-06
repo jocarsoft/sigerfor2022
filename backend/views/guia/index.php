@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\GuiaSearch */
@@ -18,55 +19,69 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Crear Guía', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php
+ 
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
+$gridColumns = [
+  [
+      'class'=>'kartik\grid\SerialColumn',
+      'contentOptions'=>['class'=>'kartik-sheet-style'],
+      'width'=>'36px',
+      'header'=>'',
+      'headerOptions'=>['class'=>'kartik-sheet-style']  
+  ],
+  [
+      'attribute' => 'id_plan', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'
+  ],
+  [
+      'attribute' => 'clase_guia', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'    
+  ],
+  [
+    'attribute' => 'numgtf', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+[
+    'attribute' => 'fecexp', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+  [
+      'class' => 'kartik\grid\ActionColumn',   
+  ],
+];
+
+
+?>
+
+
+
+
+<?= GridView::widget([
+        'dataProvider'=> $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-           // 'id',
-            'id_plan',
-            'clase_guia',
-            'numgtf',
-            'fecexp',
-            //'fecter',
-            //'modth',
-            //'codtih',
-            //'docleg',
-            //'docges',
-            //'numpo',
-            //'numpar',
-            //'depro',
-            //'seddsc',
-            //'prvpro',
-            //'dispro',
-            //'gtfori',
-            //'depdes',
-            //'prodes',
-            //'disdes',
-            //'tipper',
-            //'tipdoc',
-            //'numdoc',
-            //'aperaz',
-            //'apemat',
-            //'nombre',
-            //'tipgtf',
-            //'medio',
-            //'plaveh',
-            //'plarem',
-            //'nomcon',
-            //'numlic',
-            //'facpag',
-            //'observ',
-            //'gcloud',
-            //'id_usuario',
-            //'fecha_registro',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        'columns' => $gridColumns,
+        'pjax'=>true,
+        'responsive'=>true,
+        'hover'=>true,
+        'toolbar'=>[
+            '{export}',
+            '{toggleData}'
         ],
-    ]); ?>
+        'panel' => [
+            'heading'=>Yii::t('app', 'GUIAS'),
+            'type'=>'info',
+            //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
+            'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),
+            'footer'=>false
+        ],
+        ]);
+
+?>
 
 
 </div>

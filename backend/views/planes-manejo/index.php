@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\PlanesManejoSearch */
@@ -18,50 +19,72 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Crear Planes Manejo', ['vista'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
+    <?php
+ 
+
+$gridColumns = [
+  [
+      'class'=>'kartik\grid\SerialColumn',
+      'contentOptions'=>['class'=>'kartik-sheet-style'],
+      'width'=>'36px',
+      'header'=>'',
+      'headerOptions'=>['class'=>'kartik-sheet-style']  
+  ],
+  [
+      'attribute' => 'id_th', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'
+  ],
+  [
+      'attribute' => 'tipth', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'    
+  ],
+  [
+    'attribute' => 'contrato', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+[
+    'attribute' => 'fecsol', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+  [
+      'class' => 'kartik\grid\ActionColumn',   
+  ],
+];
+
+
+?>
+
+
+
+
+<?= GridView::widget([
+        'dataProvider'=> $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'id_th',
-            'tipth',
-            'contrato',
-            'fecsol',
-            //'fecio',
-            //'fecita',
-            //'tdleg',
-            //'docleg',
-            //'fecleg',
-            //'nomdis',
-            //'docges',
-            //'tipge',
-            //'nump',
-            //'fecini',
-            //'fecter',
-            //'supapr',
-            //'volapr',
-            //'unimed',
-            //'finali',
-            //'id_regente',
-            //'numrgt',
-            //'nomrgt',
-            //'dnirgt',
-            //'respau',
-            //'rester',
-            //'seresu',
-            //'mmulta',
-            //'observ',
-            //'gcloud',
-            //'id_usuario',
-            //'fecha_registro',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        'columns' => $gridColumns,
+        'pjax'=>true,
+        'responsive'=>true,
+        'hover'=>true,
+        'toolbar'=>[
+            '{export}',
+            '{toggleData}'
         ],
-    ]); ?>
+        'panel' => [
+            'heading'=>Yii::t('app', 'PERMISOS'),
+            'type'=>'info',
+            //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
+            'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),
+            'footer'=>false
+        ],
+        ]);
+
+?>
+  
+
 
 
 </div>

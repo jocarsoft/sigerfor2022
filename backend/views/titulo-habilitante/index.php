@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TituloHabilitanteSearch */
@@ -16,33 +17,79 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Crear Titulo Habilitante', ['create'], ['class' => 'btn btn-success']) ?>
+
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
+    
+    <?php
+    /*
+      '',
+            '',
+            '',
+            '',
+    */
+
+$gridColumns = [
+  [
+      'class'=>'kartik\grid\SerialColumn',
+      'contentOptions'=>['class'=>'kartik-sheet-style'],
+      'width'=>'36px',
+      'header'=>'',
+      'headerOptions'=>['class'=>'kartik-sheet-style']  
+  ],
+  [
+      'attribute' => 'sede', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'
+  ],
+  [
+      'attribute' => 'tipo_contrato', 
+      'vAlign' => 'middle',
+      'hAlign' => 'center'    
+  ],
+  [
+    'attribute' => 'contrato', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+[
+    'attribute' => 'nombre_titular', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+  [
+      'class' => 'kartik\grid\ActionColumn',   
+  ],
+];
+
+
+?>
+
+
+
+
+<?= GridView::widget([
+        'dataProvider'=> $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'sede',
-            'tipo_contrato',
-            'contrato',
-            'nombre_titular',
-            //'superficie',
-            //'situacion',
-            //'estado',
-            //'distrito',
-            //'provincia',
-            //'anhio_otorgado',
-            //'fecha_contrato',
-            //'gerforcloud',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        'columns' => $gridColumns,
+        'pjax'=>true,
+        'responsive'=>true,
+        'hover'=>true,
+        'toolbar'=>[
+            '{export}',
+            '{toggleData}'
         ],
-    ]); ?>
+        'panel' => [
+            'heading'=>Yii::t('app', 'Autorizaciones'),
+            'type'=>'info',
+            //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
+            'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),
+            'footer'=>false
+        ],
+        ]);
 
+?>
 
+   
 </div>
