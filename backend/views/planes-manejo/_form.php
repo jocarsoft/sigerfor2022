@@ -103,8 +103,32 @@ use backend\models\Regente;
 
                             <fieldset>
                                 <div class="form-card">
-                                    <?= $form->field($model, 'supapr')->textInput(['maxlength' => true]) ?>
-                                    <?= $form->field($model, 'volapr')->textInput(['maxlength' => true]) ?>
+                                   
+                                    <?= $form->field($model, 'supapr')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>             
+
+
+                                   
+
+                                    <?= $form->field($model, 'volapr')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>       
+
                                     <?= $form ->field($model, 'unimed')->dropDownList(
                                         
                                         ArrayHelper::map(Constantesmod::find()->where(['campo'=>'UNIMED','tabla'=>'ddplanes'])->all(),'CODE','DESCRIPCION'),
@@ -134,7 +158,18 @@ use backend\models\Regente;
                                             ?>
                                     <?= $form->field($model, 'numrgt')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'nomrgt')->textInput(['maxlength' => true]) ?>
-                                    <?= $form->field($model, 'dnirgt')->textInput(['maxlength' => true]) ?>
+                                    
+
+                                    <?= $form->field($model, 'dnirgt')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '99999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 8, 'greedy' => false]
+
+                                                ])
+                                                ?>
+
+
+
                                     <?= $form->field($model, 'respau')->textInput(['maxlength' => true]) ?>
                                        
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
@@ -145,7 +180,22 @@ use backend\models\Regente;
                                 <div class="form-card">
                                 <?= $form->field($model, 'rester')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'seresu')->textInput(['maxlength' => true]) ?>
-                                    <?= $form->field($model, 'mmulta')->textInput(['maxlength' => true]) ?>
+                                    
+
+                                    <?= $form->field($model, 'mmulta')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>  
+
+
+
+
                                     <?= $form->field($model, 'observ')->textInput(['maxlength' => true]) ?>
                                     <?= $form->field($model, 'gcloud')->textInput() ?> 
                                 </div>
