@@ -32,7 +32,7 @@ $gridColumns = [
       'headerOptions'=>['class'=>'kartik-sheet-style']  
   ],
   [
-      'attribute' => 'id_th', 
+      'attribute' => 'docleg', 
       'vAlign' => 'middle',
       'hAlign' => 'center'
   ],
@@ -42,7 +42,7 @@ $gridColumns = [
       'hAlign' => 'center'    
   ],
   [
-    'attribute' => 'contrato', 
+    'attribute' => 'docges', 
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
