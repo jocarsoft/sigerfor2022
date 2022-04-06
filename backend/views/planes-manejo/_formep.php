@@ -45,36 +45,6 @@ use backend\models\Especie;
                                             ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'resapr')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form ->field($model, 'docges')->dropDownList(
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'DOCGES','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                                'prompt'=>'Seleccionar...',
-                                            ]) ;
-                                            ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            
-                                            <?= $form ->field($model, 'tipdge')->dropDownList(
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDGE','tabla'=>'ddplanes'])->all(),'CODE','DESCRIPCION'),
-                                                [
-                                                    'prompt'=>'Seleccionar...',
-                                                ]) ;
-                                            ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'numpo')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'parco')->textInput(['maxlength' => true]) ?>
-                                        </div>
 
                                         <div class="col-md-6">
                                             <?php 
