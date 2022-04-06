@@ -65,9 +65,6 @@ $gridColumns = [
 
 ?>
 
-
-
-
 <?= GridView::widget([
         'dataProvider'=> $dataProvider,
         'filterModel' => $searchModel,
@@ -80,7 +77,7 @@ $gridColumns = [
             '{toggleData}'
         ],
         'panel' => [
-            'heading'=>Yii::t('app', 'Autorizaciones'),
+            'heading'=>Yii::t('app', 'AUTORIZACIONES'),
             'type'=>'info',
             //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
             'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),

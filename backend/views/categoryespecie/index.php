@@ -75,7 +75,7 @@ $gridColumns = [
             '{toggleData}'
         ],
         'panel' => [
-            'heading'=>Yii::t('app', 'Categorias de especies'),
+            'heading'=>Yii::t('app', 'CATEGORIAS Y ESPECIE'),
             'type'=>'info',
             //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
             'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),

@@ -74,7 +74,7 @@ $gridColumns = [
             '{toggleData}'
         ],
         'panel' => [
-            'heading'=>Yii::t('app', 'PERMISOS'),
+            'heading'=>Yii::t('app', 'PLANES DE MANEJO'),
             'type'=>'info',
             //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
             'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),
