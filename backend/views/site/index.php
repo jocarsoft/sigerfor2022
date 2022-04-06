@@ -53,6 +53,12 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 
         ?>
 
+        <?php
+
+        $totalth= $resultado2 + $resultado3 + $resultado4;
+
+        ?>
+
     
     
     <h5 class="mb-2 mt-4">Modulos</h5>
@@ -61,7 +67,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
             <!-- small card -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><?php echo $resultado; ?></h3>
+                <h3><?php echo $totalth; ?></h3>
 
                 <p>Titulo Habilitante</p>
               </div>
