@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use backend\models\Constantesmod;
 use dosamigos\datepicker\DatePicker;
 use dosamigos\datetimepicker\DateTimePicker;
-
+use backend\models\Especie;
 /* @var $this yii\web\View */
 /* @var $model app\models\EspecieGuia */
 /* @var $form yii\widgets\ActiveForm */
@@ -35,7 +35,12 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'id_especie_plan')->textInput() ?>
+
+                                            <?= $form->field($model, 'id_especie_plan')->dropDownList(
+                                                ArrayHelper::map(Especie::find()->all(),'id','nombre_cientifico'),
+                                                ['prompt' => 'Seleccionar']
+                                                ) 
+                                            ?>
                                         </div>
 
                                         <div class="col-md-6">
@@ -43,7 +48,18 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'canpie')->textInput() ?>
+                                            
+                                            <?= $form->field($model, 'canpie')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'mask' => '9999999999',
+                                                    'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 10, 'greedy' => false]
+
+                                                ])
+                                                ?>
+
+
+
+
                                         </div>
 
                                         <div class="col-md-6">
@@ -55,7 +71,18 @@ use dosamigos\datetimepicker\DateTimePicker;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'voltot')->textInput(['maxlength' => true]) ?>  
+                                           
+                                            <?= $form->field($model, 'voltot')->widget(\yii\widgets\MaskedInput::class, [
+                                                    //'name' => 'input-33',
+                                                    'clientOptions' => [
+                                                        'alias' =>  'decimal',
+                                                        'groupSeparator' => ',',
+                                                        'autoGroup' => true
+                                                    ],
+
+                                                ])
+                                        ?>  
+                                            
                                         </div>
 
                                         <div class="col-md-6">
