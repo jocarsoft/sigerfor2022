@@ -37,15 +37,11 @@ $gridColumns = [
       'hAlign' => 'center'
   ],
   [
-      'attribute' => 'tipth', 
+      'attribute' => 'docges', 
       'vAlign' => 'middle',
       'hAlign' => 'center'    
   ],
-  [
-    'attribute' => 'docges', 
-    'vAlign' => 'middle',
-    'hAlign' => 'center'    
-],
+  
 [
     'attribute' => 'fecsol', 
     'vAlign' => 'middle',
