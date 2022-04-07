@@ -42,7 +42,20 @@ use backend\models\Constantesmod;
                                     <div class="row">
 
                                         <div class="col-md-6">
-                                        <?= $form->field($model, 'SEDDSC')->textInput() ?>
+                                        
+                                        <?php 
+                                                //para crear campo combo
+                                                $datos = Constantesmod::find()
+                                                ->where(['campo' => 'SEDDSC','tabla'=>'ddguia'])
+                                                ->all();
+                                                $listData=ArrayHelper::map($datos,'CODE','DESCRIPCION');
+                                                echo $form->field($model, 'SEDDSC')->dropDownList(
+                                                $listData,
+                                                ['prompt'=>'Seleccionar...']
+                                                    );    
+                                            ?>
+
+
                                         </div>
 
                                         <div class="col-md-6">
