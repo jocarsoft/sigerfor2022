@@ -90,6 +90,8 @@ class PermisosmodController extends Controller
     {
         $model = new Permisosmod();
 
+    
+
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
 
@@ -103,6 +105,7 @@ class PermisosmodController extends Controller
                 ->one();
                 $modelTh->tipo_contrato = ' Permisos - ' .$datosp->DESCRIPCION;
                 
+               
                 $modelTh->nombre_titular = $model->NOMTIT;
                 $modelTh->superficie = $model->SUPAPR;
                 $modelTh->situacion = $model->SITUAC;
@@ -112,7 +115,13 @@ class PermisosmodController extends Controller
                 $modelTh->anhio_otorgado = $model->ANOTORG;
                 $modelTh->fecha_contrato = $model->FECONT;
 
+
+               
+
+
                 $modelTh->save();
+                
+           
 
                 return $this->redirect(['view', 'id' => $model->id]);
             }
