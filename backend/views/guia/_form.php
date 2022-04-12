@@ -158,14 +158,20 @@ use backend\models\Constantesmod;
                                             ArrayHelper::map(Constantesmod::find()->where(['campo'=>'PRVPRO','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
                                             [
                                                 'prompt'=>'Seleccionar...',
-                                            ]) ;
+                                                'onchange'=>'
+                                                    $.post("list?id='.'"+$(this).val(),function(data){ console.log(data); $("select#guia-dispro").html(data);});'
+                                                    ]) ;
                                             ?>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form ->field($model, 'dispro')->dropDownList(
                                             
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'DISPRO','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
+                                           <?= 
+                                           
+                                           $form ->field($model, 'dispro')->dropDownList(
+                                                                                  
+
+                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'dispro','tabla'=>'ddguia'])->all(),'CODE','DESCRIPCION'),
                                             [
                                                 'prompt'=>'Seleccionar...',
                                             ]) ;

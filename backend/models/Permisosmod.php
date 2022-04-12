@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property string|null $SEDDSC
  * @property string|null $NUMPER
- * @property int|null $ASIGNA
+ * @property string|null $ASIGNA
  * @property string|null $NOMTIT
  * @property int|null $NUMRUC
  * @property string|null $NOMREL
@@ -63,11 +63,11 @@ class Permisosmod extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ASIGNA', 'NUMRUC', 'TIPDOC', 'CATPER', 'CODACT', 'DOCTIT', 'NIVAPR', 'TDLEG', 'EXTEN', 'SITUAC', 'ESTCON', 'ESTOSI', 'id_usuario'], 'integer'],
+            [['NUMRUC', 'TIPDOC', 'CATPER', 'CODACT', 'DOCTIT', 'NIVAPR', 'TDLEG', 'EXTEN', 'SITUAC', 'ESTCON', 'ESTOSI', 'id_usuario'], 'integer'],
             [['SUPAPR'], 'number'],
             [['FECLEG', 'FECINI', 'FECTER', 'FECON', 'FECOSI', 'fecha_registro'], 'safe'],
             [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL', 'NRODOC', 'DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'RESAUT', 'RESOSI', 'OBSERV'], 'string', 'max' => 100],
-            [['GCLOUD'], 'string', 'max' => 200],
+            [['ASIGNA','GCLOUD'], 'string', 'max' => 200],
             [['FECONT', 'ANOTORG'], 'string', 'max' => 45],
         ];
     }
