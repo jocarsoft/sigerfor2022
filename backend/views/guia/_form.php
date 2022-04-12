@@ -61,26 +61,17 @@ use backend\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-                                            <?= $form->field($model, 'numgtf')->widget(\yii\widgets\MaskedInput::class, [
-                                                    //'mask' => '9999',
-                                                    'mask' => '9',
-                                                        'clientOptions' => ['repeat' => 18, 'greedy' => false]
-
-                                                    ]) 
-                                            ?>
+                                            <?= $form->field($model, 'numgtf')->textInput(['maxlength' => true]) ?>
                                         </div>
 
                                         <div class="col-md-6">
                                         <?= $form->field($model, 'fecexp')->input('date') ?>
 
-                                            
-                                            
                                         </div>
 
                                         <div class="col-md-6">
                                         <?= $form->field($model, 'fecter')->input('date') ?>
-
-                                            
+    
                                         </div>
 
                                         <div class="col-md-6">
