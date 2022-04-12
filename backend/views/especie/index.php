@@ -47,6 +47,13 @@ $gridColumns = [
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
+/*
+[
+    'attribute' => $dataProvider->categoria->nombre,   
+    'vAlign' => 'middle',
+    'hAlign' => 'center'  ,
+   
+    ],*/
   [
       'class' => 'kartik\grid\ActionColumn',   
   ],
