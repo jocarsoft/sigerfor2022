@@ -201,19 +201,7 @@ use backend\models\Constantesmod;
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
-                                            <div class="col-md-6">
-                                                <?= $form->field($model, 'PAGODA')->textInput(['maxlength' => true]) ?>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                               <?= $form ->field($model, 'TIPAGO')->dropDownList(  
-                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPAGO','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                                [
-                                                    'prompt'=>'Seleccionar...',
-                                                ]) ;
-                                                ?>
-                                            </div>
-
+                                           
                                             <div class="col-md-6">
                                                 <?= $form ->field($model, 'ESTCON')->dropDownList( 
                                                     ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTCON','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),

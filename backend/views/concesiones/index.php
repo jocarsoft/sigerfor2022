@@ -42,17 +42,22 @@ $gridColumns = [
       'headerOptions'=>['class'=>'kartik-sheet-style']  
   ],
   [
-      'attribute' => 'RESREG', 
+      'attribute' => 'CONTRA', 
       'vAlign' => 'middle',
       'hAlign' => 'center'
   ],
   [
-      'attribute' => 'FECREG', 
+      'attribute' => 'NOMTIT', 
       'vAlign' => 'middle',
       'hAlign' => 'center'    
   ],
   [
-    'attribute' => 'TIPCON', 
+    'attribute' => 'UNIAPR', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+  [
+    'attribute' => 'SUPAPR', 
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
