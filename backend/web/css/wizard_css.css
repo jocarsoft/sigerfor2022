@@ -155,14 +155,6 @@ select.list-dt:focus {
     position: relative
 }
 
-#progressbar lid {
-    list-style-type: none;
-    font-size: 12px;
-    width: 20%;
-    float: left;
-    position: relative
-}
-
 #progressbar #paso1:before {
     font-family: FontAwesome;
     content: "\f023"

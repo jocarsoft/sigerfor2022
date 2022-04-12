@@ -27,11 +27,11 @@ use backend\models\Constantesmod;
                         <?php $form = ActiveForm::begin(); ?>    
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <lid class="active" id="paso1"><strong>Item 1</strong></lid>
-                                <lid id="paso2"><strong>Item 2</strong></lid>
-                                <lid id="paso3"><strong>Item 3</strong></lid>
-                                <lid id="paso4"><strong>Item 4</strong></lid>
-                                <lid id="confirm"><strong>Finalizar</strong></lid>
+                                <li class="active" id="paso1"><strong>Item 1</strong></li>
+                                <li id="paso2"><strong>Item 2</strong></li>
+                                <li id="paso3"><strong>Item 3</strong></li>
+                                <li id="paso4"><strong>Item 4</strong></li>
+                                <li id="confirm"><strong>Finalizar</strong></li>
                             </ul> <!-- fieldsets -->
 
                             <fieldset>
@@ -201,19 +201,7 @@ use backend\models\Constantesmod;
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
-                                            <div class="col-md-6">
-                                                <?= $form->field($model, 'PAGODA')->textInput(['maxlength' => true]) ?>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                               <?= $form ->field($model, 'TIPAGO')->dropDownList(  
-                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPAGO','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                                [
-                                                    'prompt'=>'Seleccionar...',
-                                                ]) ;
-                                                ?>
-                                            </div>
-
+                                           
                                             <div class="col-md-6">
                                                 <?= $form ->field($model, 'ESTCON')->dropDownList( 
                                                     ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTCON','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
