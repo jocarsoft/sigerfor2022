@@ -65,7 +65,7 @@
                     ['label' => 'TH', 'header' => true],
                     ['label' => 'Permisos', 'url' => ['/permisosmod/index']],
                     ['label' => 'Autorizaciones', 'url' => ['/autorizacionesmod/index']],
-                    ['label' => 'Conseciones', 'url' => ['/concesiones/index']],
+                    ['label' => 'Concesiones', 'url' => ['/concesiones/index']],
                     ['label' => 'Titulo Habilitante', 'url' => ['/titulo-habilitante/index']],
                     ['label' => 'Regente', 'url' => ['/regentemod/index']],
                     ['label' => 'PLANES DE MANEJO', 'header' => true],                    
