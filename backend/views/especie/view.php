@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre_cientifico',
             'familia',
             'id_categoria',
+            
         ],
     ]) ?>
 
