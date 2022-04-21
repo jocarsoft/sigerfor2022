@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Concesionesmod */
 
-$this->title = 'Update Concesionesmod: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Concesionesmods', 'url' => ['index']];
+$this->title = 'Actualizar Concesiones: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Concesiones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="concesionesmod-update">
 
