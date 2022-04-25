@@ -131,11 +131,7 @@ class GuiaController extends Controller
         ->count();
         
         $query = Constantesmod::find()->andFilterWhere(['like', 'DESCRIPCION',$id])->all();
-        
-        
-
-
-
+                
        // $contardistrito = Constantesmod::find()
           //  ->like(['code'=>$id])
          //   ->count();
