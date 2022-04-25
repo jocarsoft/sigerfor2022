@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '
-                ¿Estás segura de que quieres eliminar?',
+                ¿Estás seguro de que quieres eliminar?',
                 'method' => 'post',
             ],
         ]) ?>

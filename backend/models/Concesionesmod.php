@@ -103,7 +103,7 @@ class Concesionesmod extends \yii\db\ActiveRecord
             'FECLEG' => 'Fecha de emision de la resolucion de otorgamiento',
             'ANOTORG' => 'Año en el que se otorgó la concesión',
             'UNIAPR' => 'Unidad(es) de aprovechamiento',
-            'FECINI' => 'Fecha de inicio de vigencia de la concesioón',
+            'FECINI' => 'Fecha de inicio de vigencia de la concesión',
             'FECTER' => 'Fecha de termino de vigencia de la concesión',
             'CODACT' => 'Codigo de activiadad de la concesión',
             'FINALI' => 'Finalidad de la plantación (Para el caso de concesiones de plantaciones)',

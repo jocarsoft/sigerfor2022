@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Concesionesmod */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Concesionesmods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Concesiones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
