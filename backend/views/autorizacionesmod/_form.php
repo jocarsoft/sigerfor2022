@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use backend\models\Constantesmod;
-
+use backend\models\UbigeoPeruDepartments;
 
 
 /* @var $this yii\web\View */
@@ -45,6 +45,7 @@ use backend\models\Constantesmod;
                                         
                                         <?php 
                                                 //para crear campo combo
+                                                
                                                 $datos = Constantesmod::find()
                                                 ->where(['campo' => 'SEDDSC','tabla'=>'ddguia'])
                                                 ->all();
@@ -52,7 +53,7 @@ use backend\models\Constantesmod;
                                                 echo $form->field($model, 'SEDDSC')->dropDownList(
                                                 $listData,
                                                 ['prompt'=>'Seleccionar...']
-                                                    );    
+                                                    ); 
                                             ?>
 
 
