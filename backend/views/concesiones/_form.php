@@ -6,7 +6,6 @@ use yii\helpers\ArrayHelper;
 use backend\models\Constantesmod;
 
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Concesionesmod */
 /* @var $form yii\widgets\ActiveForm */
@@ -27,11 +26,10 @@ use backend\models\Constantesmod;
                         <?php $form = ActiveForm::begin(); ?>    
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="paso1"><strong>Item 1</strong></li>
-                                <li id="paso2"><strong>Item 2</strong></li>
-                                <li id="paso3"><strong>Item 3</strong></li>
-                                <li id="paso4"><strong>Item 4</strong></li>
-                                <li id="confirm"><strong>Finalizar</strong></li>
+                                <liv class="active" id="paso1"><strong>Item 1</strong></liv>
+                                <liv id="paso2"><strong>Item 2</strong></liv>
+                                <liv id="paso3"><strong>Item 3</strong></liv>
+                                <liv id="confirm"><strong>Finalizar</strong></liv>
                             </ul> <!-- fieldsets -->
 
                             <fieldset>
@@ -58,9 +56,7 @@ use backend\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
-
-                                        <?= $form->field($model, 'FECONT')->input('date') ?>
-                                        
+                                        <?= $form->field($model, 'FECONT')->input('date') ?>                                        
                                         </div>
 
                                         <div class="col-md-6">
@@ -77,24 +73,15 @@ use backend\models\Constantesmod;
                                             <?= $form->field($model, 'NOMTIT')->textInput(['maxlength' => true]) ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            
+                                        <div class="col-md-6">                                            
                                             <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
                                                     //'mask' => '9999999999',
                                                     'mask' => '9',
                                                     'clientOptions' => ['repeat' => 11, 'greedy' => false]
-
                                                 ])
                                                 ?>
                                         </div>
-                                    </div>
-                                </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
-                            </fieldset>
 
-                            
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
                                         <div class="col-md-6">
                                             <?= $form->field($model, 'NOMREL')->textInput(['maxlength' => true]) ?>
                                         </div>
@@ -108,6 +95,15 @@ use backend\models\Constantesmod;
                                             ?>
                                         </div>
 
+                                    </div>
+                                </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
+                            </fieldset>
+
+                            
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                                          
                                         <div class="col-md-6">
                                             
                                             <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
@@ -147,14 +143,7 @@ use backend\models\Constantesmod;
                                                 ]) 
                                             ?>
                                         </div>
-                                    </div>
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
-                            </fieldset>
 
-                            
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
                                         <div class="col-md-6">
                                             <?= $form->field($model, 'UNIAPR')->textInput(['maxlength' => true]) ?>
                                         </div>
@@ -177,6 +166,15 @@ use backend\models\Constantesmod;
                                             ?>
                                         </div>
 
+                                    </div>
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
+                            </fieldset>
+
+                            
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        
                                         <div class="col-md-6">
                                             <?= $form ->field($model, 'FINALI')->dropDownList(    
                                             ArrayHelper::map(Constantesmod::find()->where(['campo'=>'FINALI','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
@@ -194,15 +192,8 @@ use backend\models\Constantesmod;
                                             ]) ;
                                             ?>
                                         </div>
-                                    </div>
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
-                            </fieldset>
 
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                           
-                                            <div class="col-md-6">
+                                        <div class="col-md-6">
                                                 <?= $form ->field($model, 'ESTCON')->dropDownList( 
                                                     ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTCON','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
                                                     [
@@ -232,14 +223,8 @@ use backend\models\Constantesmod;
                                             <div class="col-md-6">
                                                 <?= $form->field($model, 'RESAUT')->textInput(['maxlength' => true]) ?>
                                             </div>
-                                    </div>            
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
-                            </fieldset>
-                            
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-md-6">
+
+                                            <div class="col-md-6">
                                             <?= $form ->field($model, 'ESTOSI')->dropDownList(
                                             ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTOSI','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
                                             [
@@ -252,6 +237,15 @@ use backend\models\Constantesmod;
                                             <?= $form->field($model, 'RESOSI')->textInput(['maxlength' => true]) ?>
                                         </div>
 
+
+                                    </div>
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
+                            </fieldset>
+                            
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        
                                         <div class="col-md-6">
                                         
                                         <?= $form->field($model, 'FECOSI')->input('date') ?>
