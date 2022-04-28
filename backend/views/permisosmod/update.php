@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Permisosmod */
 
 $this->title = 'Update Permisosmod: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Permisosmods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Permisos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Actualizar';
 ?>
