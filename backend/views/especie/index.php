@@ -4,6 +4,7 @@ use yii\helpers\Html;
 //use yii\grid\GridView;
 use kartik\grid\GridView;
 
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EspecieSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -47,6 +48,17 @@ $gridColumns = [
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
+<<<<<<< HEAD
+
+[
+    'attribute' => 'id_categoria', 
+    
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+
+
+=======
 /*
 [
     'attribute' => $dataProvider->categoria->nombre,   
@@ -54,6 +66,7 @@ $gridColumns = [
     'hAlign' => 'center'  ,
    
     ],*/
+>>>>>>> 584069a9f947a681ceae5baa8961bae173d40b41
   [
       'class' => 'kartik\grid\ActionColumn',   
   ],

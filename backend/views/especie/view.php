@@ -34,11 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre_cientifico',
             'familia',
             'id_categoria',
+<<<<<<< HEAD
+            
+=======
             array(
                 'name'=>'CategoriaNombre',
                 'attribute'=>'CategoriaNombre',
                 'value'=>$model->categoria->nombre, //Con esto se mostrará la descripción de la categoría en vez del id_categoria
                 ),
+>>>>>>> 584069a9f947a681ceae5baa8961bae173d40b41
         ],
     ]) ?>
 
