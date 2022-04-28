@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Actualizar Categoria y especie: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Categoryespecies', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="categoryespecie-update">
 
