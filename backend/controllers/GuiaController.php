@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use backend\models\EspecieGuia;
+use backend\models\Constantesmod;
 use backend\models\EspecieGuiaSearch;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
@@ -33,7 +34,7 @@ class GuiaController extends Controller
                             'allow' => true,            
                         ],            
                         [            
-                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'], // add all actions to take guest to login page            
+                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete','list'], // add all actions to take guest to login page            
                             'allow' => true,            
                             'roles' => ['@'],            
                         ],            
@@ -123,7 +124,36 @@ class GuiaController extends Controller
         ]);
     }
 
+    public function actionList($id)
+    {
+        $contador = Constantesmod::find()
+        ->andFilterWhere(['like', 'DESCRIPCION',$id])
+        ->count();
+        
+        $query = Constantesmod::find()->andFilterWhere(['like', 'DESCRIPCION',$id])->all();
+                
+       // $contardistrito = Constantesmod::find()
+          //  ->like(['code'=>$id])
+         //   ->count();
 
+          /*  $distrito = Constantesmod::find()
+            ->where(['code_'=>$id])
+            ->all();*/
+
+            if($contador>0){
+
+              $i= 0;      
+
+            foreach($query as $query2){
+
+              echo "<option value'".$query2->CODE."'>".$query2->DESCRIPCION."</option>";
+                    }
+            }
+             else {
+            echo "<option>-</option>";
+            
+                }
+    }
 
 
 

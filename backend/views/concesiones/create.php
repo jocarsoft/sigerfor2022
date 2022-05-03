@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Concesionesmod */
 
 $this->title = 'Crear Conseciones';
-$this->params['breadcrumbs'][] = ['label' => 'Concesionesmods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Concesiones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="concesionesmod-create">

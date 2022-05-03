@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Permisosmod */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Permisosmods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Permisos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => '
-                ¿Estás segura de que quieres eliminar?',
+                ¿Estás seguro de que quieres eliminar?',
                 'method' => 'post',
             ],
         ]) ?>

@@ -42,17 +42,22 @@ $gridColumns = [
       'headerOptions'=>['class'=>'kartik-sheet-style']  
   ],
   [
-      'attribute' => 'RESREG', 
+      'attribute' => 'CONTRA', 
       'vAlign' => 'middle',
       'hAlign' => 'center'
   ],
   [
-      'attribute' => 'FECREG', 
+      'attribute' => 'NOMTIT', 
       'vAlign' => 'middle',
       'hAlign' => 'center'    
   ],
   [
-    'attribute' => 'TIPCON', 
+    'attribute' => 'UNIAPR', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+  [
+    'attribute' => 'SUPAPR', 
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
@@ -79,7 +84,7 @@ $gridColumns = [
             '{toggleData}'
         ],
         'panel' => [
-            'heading'=>Yii::t('app', 'Concesiones'),
+            'heading'=>Yii::t('app', 'CONCESIONES'),
             'type'=>'info',
             //'before'=>Html::a(Yii::t('app', 'Create User'), ['create'], ['data-pjax' => 0, 'class' => 'btn btn-danger']),
             'after'=>Html::a('<i class="fas fa-redo"></i> Actualizar', ['index'], ['class' => 'btn btn-info']),
