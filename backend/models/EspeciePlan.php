@@ -85,6 +85,12 @@ class EspeciePlan extends \yii\db\ActiveRecord
         return $this->hasOne(Especie::className(), ['id' => 'id_especie']);
     }
 
+    //nueva funcion
+    public function getEspecieComun()
+    {
+        return $this->especie->nombre_comun;
+    }
+
     /**
      * Gets query for [[EspecieGuias]].
      *
@@ -103,5 +109,10 @@ class EspeciePlan extends \yii\db\ActiveRecord
     public function getPlan()
     {
         return $this->hasOne(PlanesManejo::className(), ['id' => 'id_plan']);
+    }
+
+    public function getPlanContrato()
+    {
+        return $this->plan->contrato;
     }
 }

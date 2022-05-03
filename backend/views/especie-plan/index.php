@@ -34,15 +34,23 @@ $gridColumns = [
       'headerOptions'=>['class'=>'kartik-sheet-style']  
   ],
   [
-      'attribute' => 'id_plan', 
+      'attribute' => 'Contrato de Plan', 
       'vAlign' => 'middle',
-      'hAlign' => 'center'
+      'hAlign' => 'center',
+      'value' => function($model){ return $model->planContrato; }, // agregamos
   ],
-  [
+  /*[
       'attribute' => 'id_especie', 
       'vAlign' => 'middle',
       'hAlign' => 'center'    
-  ],
+  ],*/
+  [
+        'attribute' => 'Especie',
+        'vAlign' => 'middle',
+        'hAlign' => 'center'  ,
+        'value' => function($model){ return $model->especieComun; }, // agregamos
+
+    ],
   [
     'attribute' => 'resapr', 
     'vAlign' => 'middle',
