@@ -41,6 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'NOMREL',
             'NOMRELU',
             'NOMRELD',
+            'DNIRE',
+            'DNIRED',
             'TIPDOC',
             'NRODOC',
             'PROCOT',

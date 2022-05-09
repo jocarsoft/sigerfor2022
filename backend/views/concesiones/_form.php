@@ -68,9 +68,7 @@ use backend\models\UbigeoPeruDistricts;
                                                
                                             ?>
                                         </div>
-
-                                        
-                                       
+                                      
                                         <div class="col-md-6">
                                             <?php 
                                             //para crear campo combo
@@ -93,8 +91,6 @@ use backend\models\UbigeoPeruDistricts;
                                             ?>
                                         </div>
 
-
-
                                         <div class="col-md-6">
                                         <?= $form->field($model, 'FECONT')->input('date') ?>                                        
                                         </div>
@@ -113,36 +109,7 @@ use backend\models\UbigeoPeruDistricts;
                                             <?= $form->field($model, 'NOMTIT')->textInput(['maxlength' => true]) ?>
                                         </div>
 
-                                        <div class="col-md-6">                                            
-                                            <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
-                                                    //'mask' => '9999999999',
-                                                    'mask' => '9',
-                                                    'clientOptions' => ['repeat' => 11, 'greedy' => false]
-                                                ])
-                                                ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'NOMREL')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'NOMRELU')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'NOMRELD')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form ->field($model, 'TIPDOC')->dropDownList( 
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDOC','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                                'prompt'=>'Seleccionar...',
-                                            ]) ;
-                                            ?>
-                                        </div>
-
+                                        
                                     </div>
                                 </div> <input type="button" name="next" class="next action-button" value="Siguiente" />
                             </fieldset>
@@ -151,50 +118,123 @@ use backend\models\UbigeoPeruDistricts;
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
+                                        <div class="col-md-6">                                            
+                                                <?= $form->field($model, 'NUMRUC')->widget(\yii\widgets\MaskedInput::class, [
+                                                        //'mask' => '9999999999',
+                                                        'mask' => '9',
+                                                        'clientOptions' => ['repeat' => 11, 'greedy' => false]
+                                                    ])
+                                                    ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'NOMREL')->textInput(['maxlength' => true]) ?>
+                                            </div>
+
+                                             <div class="col-md-6">
+                                                <?= $form ->field($model, 'TIPDOC')->dropDownList( 
+                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDOC','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                [
+                                                    'prompt'=>'Seleccionar...',
+                                                ]) ;
+                                                ?>
+                                            </div>
                                                           
-                                        <div class="col-md-6">
+                                            <div class="col-md-6">
                                             
-                                            <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
-                                               // 'mask' => '999999999999',
-                                                'mask' => '9',
-                                                    'clientOptions' => ['repeat' => 12, 'greedy' => false]
-
-                                            ]) 
-                                            ?>
-
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form ->field($model, 'PROCOT')->dropDownList(  
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'PROCOT','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                                'prompt'=>'Seleccionar...',
-                                            ]) ;
-                                            ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form ->field($model, 'CONCUR')->dropDownList( 
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'CONCUR','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                                'prompt'=>'Seleccionar...',
-                                            ]) ;
-                                            ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                        <?= $form->field($model, 'ANOTORG')->widget(\yii\widgets\MaskedInput::class, [
-                                                    //'mask' => '9999',
+                                                <?= $form->field($model, 'NRODOC')->widget(\yii\widgets\MaskedInput::class, [
+                                                // 'mask' => '999999999999',
                                                     'mask' => '9',
-                                                    'clientOptions' => ['repeat' => 4, 'greedy' => false]
+                                                        'clientOptions' => ['repeat' => 12, 'greedy' => false]
 
                                                 ]) 
-                                            ?>
-                                        </div>
+                                                ?>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'UNIAPR')->textInput(['maxlength' => true]) ?>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'NOMRELU')->textInput(['maxlength' => true]) ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'DNIRE')->widget(\yii\widgets\MaskedInput::class, [
+                                                // 'mask' => '99999999',
+                                                    'mask' => '9',
+                                                        'clientOptions' => ['repeat' => 8, 'greedy' => false]
+
+                                                ]) 
+                                                ?>
+                                                
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'NOMRELD')->textInput(['maxlength' => true]) ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'DNIRED')->widget(\yii\widgets\MaskedInput::class, [
+                                                // 'mask' => '99999999',
+                                                    'mask' => '9',
+                                                        'clientOptions' => ['repeat' => 8, 'greedy' => false]
+
+                                                ]) 
+                                                ?>
+                                                
+                                            </div>
+
+                                    </div>
+                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
+                            </fieldset>
+
+                            
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+
+                                            <div class="col-md-6">
+                                                <?= $form ->field($model, 'PROCOT')->dropDownList(  
+                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'PROCOT','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                [
+                                                    'prompt'=>'Seleccionar...',
+                                                ]) ;
+                                                ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form ->field($model, 'CONCUR')->dropDownList( 
+                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'CONCUR','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                [
+                                                    'prompt'=>'Seleccionar...',
+                                                ]) ;
+                                                ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'ANOTORG')->widget(\yii\widgets\MaskedInput::class, [
+                                                            //'mask' => '9999',
+                                                            'mask' => '9',
+                                                            'clientOptions' => ['repeat' => 4, 'greedy' => false]
+
+                                                        ]) 
+                                                    ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'UNIAPR')->textInput(['maxlength' => true]) ?>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                
+                                                <?= $form->field($model, 'SUPAPR')->widget(\yii\widgets\MaskedInput::class, [
+                                                        //'name' => 'input-33',
+                                                        'clientOptions' => [
+                                                            'alias' =>  'decimal',
+                                                            'groupSeparator' => ',',
+                                                            'autoGroup' => true
+                                                        ],
+
+                                                    ])
+                                            ?>
+                                            </div>
 
                                         <div class="col-md-6">
                                         <?= $form->field($model, 'FECINI')->input('date') ?>
@@ -217,12 +257,10 @@ use backend\models\UbigeoPeruDistricts;
                                     </div>
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
                             </fieldset>
-
                             
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
-                                        
                                         <div class="col-md-6">
                                             <?= $form ->field($model, 'FINALI')->dropDownList(    
                                             ArrayHelper::map(Constantesmod::find()->where(['campo'=>'FINALI','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
@@ -240,19 +278,40 @@ use backend\models\UbigeoPeruDistricts;
                                             ]) ;
                                             ?>
                                         </div>
+                                                <div class="col-md-6">
+                                                    <?= $form ->field($model, 'ESTCON')->dropDownList( 
+                                                        ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTCON','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                        [
+                                                            'prompt'=>'Seleccionar...',
+                                                        ]) ;
+                                                    ?>
+                                                </div>
 
-                                        <div class="col-md-6">
-                                                <?= $form ->field($model, 'ESTCON')->dropDownList( 
-                                                    ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTCON','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                <div class="col-md-6">
+                                                    <?= $form ->field($model, 'SITUAC')->dropDownList(
+                                                    ArrayHelper::map(Constantesmod::find()->where(['campo'=>'SITUAC','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                    [
+                                                        'prompt'=>'Seleccionar...',
+                                                    ]) ;
+                                                    ?>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <?= $form ->field($model, 'ESTARE')->dropDownList(
+                                                    ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTARE','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
                                                     [
                                                         'prompt'=>'Seleccionar...',
                                                     ]) ;
                                                 ?>
-                                            </div>
+                                                </div>
 
-                                            <div class="col-md-6">
-                                                <?= $form ->field($model, 'SITUAC')->dropDownList(
-                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'SITUAC','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
+                                                <div class="col-md-6">
+                                                    <?= $form->field($model, 'RESAUT')->textInput(['maxlength' => true]) ?>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                <?= $form ->field($model, 'ESTOSI')->dropDownList(
+                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTOSI','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
                                                 [
                                                     'prompt'=>'Seleccionar...',
                                                 ]) ;
@@ -260,59 +319,28 @@ use backend\models\UbigeoPeruDistricts;
                                             </div>
 
                                             <div class="col-md-6">
-                                                <?= $form ->field($model, 'ESTARE')->dropDownList(
-                                                ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTARE','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                                [
-                                                    'prompt'=>'Seleccionar...',
-                                                ]) ;
-                                            ?>
+                                                <?= $form->field($model, 'RESOSI')->textInput(['maxlength' => true]) ?>
+                                            </div>
+                                        
+                                            <div class="col-md-6">
+                                            
+                                            <?= $form->field($model, 'FECOSI')->input('date') ?>
+                                        
                                             </div>
 
                                             <div class="col-md-6">
-                                                <?= $form->field($model, 'RESAUT')->textInput(['maxlength' => true]) ?>
+                                                <?= $form->field($model, 'RDOCAD')->textInput(['maxlength' => true]) ?>
                                             </div>
 
                                             <div class="col-md-6">
-                                            <?= $form ->field($model, 'ESTOSI')->dropDownList(
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'ESTOSI','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                                'prompt'=>'Seleccionar...',
-                                            ]) ;
-                                            ?>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'RESOSI')->textInput(['maxlength' => true]) ?>
-                                        </div>
+                                            <?= $form->field($model, 'FECCAD')->input('date') ?>
+                                            
+                                            </div>
 
-
-                                    </div>
-                                </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> <input type="button" name="next" class="next action-button" value="Siguiente" />
-                            </fieldset>
-                            
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        
-                                        <div class="col-md-6">
-                                        
-                                        <?= $form->field($model, 'FECOSI')->input('date') ?>
-                                       
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'RDOCAD')->textInput(['maxlength' => true]) ?>
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                        <?= $form->field($model, 'FECCAD')->input('date') ?>
-                                        
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'OBSERV')->textInput(['maxlength' => true]) ?>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'OBSERV')->textInput(['maxlength' => true]) ?>
+                                            </div>
                                     </div>
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Regresar" /> 
                                 <?= Html::submitButton('GUARDAR', ['class' => 'btn btn-success']) ?>
