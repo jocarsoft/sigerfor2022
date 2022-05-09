@@ -47,6 +47,16 @@ $gridColumns = [
     'vAlign' => 'middle',
     'hAlign' => 'center'    
 ],
+
+[
+    'attribute' => 'tipth', 
+    'vAlign' => 'middle',
+    'hAlign' => 'center'    
+],
+
+
+
+
   [
       'class' => 'kartik\grid\ActionColumn',   
   ],
