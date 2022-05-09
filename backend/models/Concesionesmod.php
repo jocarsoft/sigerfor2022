@@ -48,7 +48,10 @@ use Yii;
  * @property string|null $OBSERV
  * @property string|null $GCLOUD
  * @property int|null $id_usuario
- * @property string|null $fecha_registro
+ * @property string|null $departamento_co
+ * @property string|null $provincia_co
+ * @property string|null $distrito_co
+ * @property string|null $fecha_registro * 
  */
 class Concesionesmod extends \yii\db\ActiveRecord
 {
@@ -71,7 +74,7 @@ class Concesionesmod extends \yii\db\ActiveRecord
             [['SUPAPR', 'PAGODA'], 'number'],
             [['RESREG', 'FECREG', 'CONTRA', 'NOMTIT', 'NOMREL', 'TIPDOC', 'NRODOC', 'SECTOR', 'NOMDIS', 'SEDDSC', 'DOCLEG', 'UNIAPR', 'CODACT', 'RESAUT', 'RESOSI', 'RDOCAD'], 'string', 'max' => 100],
             [['NUMRUC'], 'string', 'max' => 11],
-            [['OBSERV', 'GCLOUD'], 'string', 'max' => 200],
+            [['OBSERV', 'GCLOUD','departamento_co','provincia_co','distrito_co'], 'string', 'max' => 200],
         ];
     }
 
@@ -123,6 +126,9 @@ class Concesionesmod extends \yii\db\ActiveRecord
             'GCLOUD' => 'Link de expediente en la nueba',
             'id_usuario' => 'Id Usuario',
             'fecha_registro' => 'Fecha Registro',
+            'departamento_co' => 'Departamento',
+            'provincia_co' => 'Provincia',
+            'distrito_co' => 'Distrito',
         ];
     }
 }

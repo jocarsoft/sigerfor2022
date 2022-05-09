@@ -18,7 +18,7 @@ class ConcesionesSearch extends Concesionesmod
     {
         return [
             [['id', 'TIPCON', 'ADENDA', 'PROCOT', 'CONCUR', 'ANOTORG', 'FINALI', 'OBJCON', 'TIPAGO', 'ESTCON', 'SITUAC', 'ESTARE', 'ESTOSI', 'id_usuario'], 'integer'],
-            [['RESREG', 'FECREG', 'CONTRA', 'FECONT', 'NOMTIT', 'NUMRUC', 'NOMREL', 'TIPDOC', 'NRODOC', 'SECTOR', 'NOMDIS', 'SEDDSC', 'DOCLEG', 'FECLEG', 'UNIAPR', 'FECINI', 'FECTER', 'CODACT', 'RESAUT', 'RESOSI', 'FECOSI', 'RDOCAD', 'FECCAD', 'OBSERV', 'GCLOUD', 'fecha_registro'], 'safe'],
+            [['RESREG', 'FECREG', 'CONTRA', 'FECONT', 'NOMTIT', 'NUMRUC', 'NOMREL', 'TIPDOC', 'NRODOC', 'SECTOR', 'NOMDIS', 'SEDDSC', 'DOCLEG', 'FECLEG', 'UNIAPR', 'FECINI', 'FECTER', 'CODACT', 'RESAUT', 'RESOSI', 'FECOSI', 'RDOCAD', 'FECCAD', 'OBSERV','departamento_co','provincia_co', 'distrito_co','GCLOUD', 'fecha_registro'], 'safe'],
             [['SUPAPR', 'PAGODA'], 'number'],
         ];
     }
@@ -82,6 +82,11 @@ class ConcesionesSearch extends Concesionesmod
             'FECCAD' => $this->FECCAD,
             'id_usuario' => $this->id_usuario,
             'fecha_registro' => $this->fecha_registro,
+            'departamento_co' => $this->departamento_co,
+            'provincia_co' => $this->provincia_co,
+            'distrito_co' => $this->distrito_co,
+
+
         ]);
 
         $query->andFilterWhere(['like', 'RESREG', $this->RESREG])
@@ -102,7 +107,10 @@ class ConcesionesSearch extends Concesionesmod
             ->andFilterWhere(['like', 'RESOSI', $this->RESOSI])
             ->andFilterWhere(['like', 'RDOCAD', $this->RDOCAD])
             ->andFilterWhere(['like', 'OBSERV', $this->OBSERV])
-            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD]);
+            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD])
+            ->andFilterWhere(['like', 'departamento_co', $this->departamento_co])
+            ->andFilterWhere(['like', 'provincia_co', $this->provincia_co])
+            ->andFilterWhere(['like', 'distrito_co', $this->distrito_co]);
 
         return $dataProvider;
     }

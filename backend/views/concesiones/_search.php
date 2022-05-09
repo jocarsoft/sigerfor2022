@@ -99,6 +99,12 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'fecha_registro') ?>
 
+    <?php // echo $form->field($model, 'departamento_co') ?>
+    <?php // echo $form->field($model, 'provincia_co') ?>
+    <?php // echo $form->field($model, 'distrito_co') ?>
+
+
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

@@ -71,6 +71,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'GCLOUD',
             'id_usuario',
             'fecha_registro',
+            'departamento_co',
+            'provincia_co',
+            'distrito_co',
         ],
     ]) ?>
 
