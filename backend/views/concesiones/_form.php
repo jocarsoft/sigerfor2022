@@ -87,6 +87,14 @@ use backend\models\Constantesmod;
                                         </div>
 
                                         <div class="col-md-6">
+                                            <?= $form->field($model, 'NOMRELU')->textInput(['maxlength' => true]) ?>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <?= $form->field($model, 'NOMRELD')->textInput(['maxlength' => true]) ?>
+                                        </div>
+
+                                        <div class="col-md-6">
                                             <?= $form ->field($model, 'TIPDOC')->dropDownList( 
                                             ArrayHelper::map(Constantesmod::find()->where(['campo'=>'TIPDOC','tabla'=>'ddconcesiones'])->all(),'CODE','DESCRIPCION'),
                                             [
