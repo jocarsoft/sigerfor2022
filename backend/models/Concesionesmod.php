@@ -19,6 +19,8 @@ use Yii;
  * @property string|null $NOMREL
  * @property string|null $NOMRELU
  * @property string|null $NOMRELD
+ * @property string|null $DNIRE 
+ * @property string|null $DNIRED
  * @property string|null $TIPDOC
  * @property string|null $NRODOC
  * @property int|null $PROCOT
@@ -74,7 +76,7 @@ class Concesionesmod extends \yii\db\ActiveRecord
             [['TIPCON', 'ADENDA', 'PROCOT', 'CONCUR', 'ANOTORG', 'FINALI', 'OBJCON', 'TIPAGO', 'ESTCON', 'SITUAC', 'ESTARE', 'ESTOSI', 'id_usuario'], 'integer'],
             [['FECONT', 'FECLEG', 'FECINI', 'FECTER', 'FECOSI', 'FECCAD', 'fecha_registro'], 'safe'],
             [['SUPAPR', 'PAGODA'], 'number'],
-            [['RESREG', 'FECREG', 'CONTRA', 'NOMTIT', 'NOMREL','NOMRELU','NOMRELD', 'TIPDOC', 'NRODOC', 'SECTOR', 'NOMDIS', 'SEDDSC', 'DOCLEG', 'UNIAPR', 'CODACT', 'RESAUT', 'RESOSI', 'RDOCAD'], 'string', 'max' => 100],
+            [['RESREG', 'FECREG', 'CONTRA', 'NOMTIT', 'NOMREL','NOMRELU','NOMRELD', 'TIPDOC', 'NRODOC', 'DNIRE', 'DNIRED','SECTOR', 'NOMDIS', 'SEDDSC', 'DOCLEG', 'UNIAPR', 'CODACT', 'RESAUT', 'RESOSI', 'RDOCAD'], 'string', 'max' => 100],
             [['NUMRUC'], 'string', 'max' => 11],
             [['OBSERV', 'GCLOUD','departamento_co','provincia_co','distrito_co'], 'string', 'max' => 200],
         ];
@@ -95,9 +97,11 @@ class Concesionesmod extends \yii\db\ActiveRecord
             'ADENDA' => 'Indica si tiene adenda',
             'NOMTIT' => '(Persona Natural) del titular de concesión',
             'NUMRUC' => 'Número de RUC del titular',
-            'NOMREL' => 'Nombre del representante legal 1',
+            'NOMREL' => 'Nombre del representante legal ',
             'NOMRELU' => 'Nombre del representante legal 2',
             'NOMRELD' => 'Nombre del representante legal 3',
+            'DNIRE' => 'DNI del representante legal 2 ',
+            'DNIRED' => 'DNI del representante legal 3 ',
             'TIPDOC' => 'Tipo de documento de identidad del titular (Si es persona natural) o del representante legal (si es persona jurídica)',
             'NRODOC' => 'Número de documento de identidad del titular (Si es persona natural) o del representante legal (si es persona jurídica)',
             'PROCOT' => 'Modalidad de entrega de contrato',
