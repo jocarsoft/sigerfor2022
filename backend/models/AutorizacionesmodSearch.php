@@ -18,7 +18,7 @@ class AutorizacionesmodSearch extends Autorizacionesmod
     {
         return [
             [['id', 'SEDDSC', 'ASIGNA', 'TIPDOC', 'NOMDIS', 'CODACT', 'SITUAC', 'ESTMOD', 'ESTCON', 'ESTOSI', 'TIPANB', 'DESTIN', 'id_usuario'], 'integer'],
-            [['NUMAUT', 'NOMTIT', 'NOMREL', 'NRODOC', 'NOMCCN', 'DOCLEG', 'FECLEG', 'CODCAT', 'SECTOR', 'DOCTIT', 'NROPAR', 'FECINI', 'FECTER', 'NOMRGT', 'NUMRGT', 'DNIREG', 'RESOSI', 'FECMOD', 'FECCON', 'FECOSI', 'OBSERV', 'GCLOUD', 'fecha_registro'], 'safe'],
+            [['NUMAUT', 'NOMTIT', 'NOMREL', 'NRODOC', 'NOMCCN', 'DOCLEG', 'FECLEG', 'CODCAT', 'SECTOR', 'DOCTIT', 'NROPAR', 'FECINI', 'FECTER', 'NOMRGT', 'NUMRGT', 'DNIREG', 'RESOSI', 'FECMOD', 'FECCON', 'FECOSI', 'OBSERV','departamento_aut','provincia_aut','distrito_aut', 'GCLOUD', 'fecha_registro'], 'safe'],
             [['SUPAPR', 'SUPRES', 'PAGO'], 'number'],
         ];
     }
@@ -80,6 +80,9 @@ class AutorizacionesmodSearch extends Autorizacionesmod
             'PAGO' => $this->PAGO,
             'DESTIN' => $this->DESTIN,
             'id_usuario' => $this->id_usuario,
+            'departamento_aut' => $this->departamento_aut,
+            'provincia_aut' => $this->provincia_aut,
+            'distrito_aut' => $this->distrito_aut,
             'fecha_registro' => $this->fecha_registro,
         ]);
 
@@ -99,7 +102,11 @@ class AutorizacionesmodSearch extends Autorizacionesmod
             ->andFilterWhere(['like', 'RESOSI', $this->RESOSI])
             ->andFilterWhere(['like', 'FECMOD', $this->FECMOD])
             ->andFilterWhere(['like', 'OBSERV', $this->OBSERV])
-            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD]);
+            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD])
+            ->andFilterWhere(['like', 'departamento_aut', $this->departamento_aut])
+            ->andFilterWhere(['like', 'provincia_aut', $this->provincia_aut])
+            ->andFilterWhere(['like', 'distrito_aut', $this->distrito_aut])
+            ;
 
         return $dataProvider;
     }

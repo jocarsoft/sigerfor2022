@@ -45,6 +45,9 @@ use Yii;
  * @property string|null $OBSERV
  * @property string|null $GCLOUD
  * @property int|null $id_usuario
+ * @property string|null $departamento_aut
+ * @property string|null $provincia_aut
+ * @property string|null $distrito_aut
  * @property string|null $fecha_registro
  * @property string|null $FECONT
  * @property string|null $ANOTORG
@@ -70,7 +73,7 @@ class Autorizacionesmod extends \yii\db\ActiveRecord
             [['SUPAPR', 'SUPRES', 'PAGO'], 'number'],
             [['SEDDSC','NUMAUT', 'NOMTIT', 'NOMREL', 'NRODOC', 'NOMCCN', 'DOCLEG', 'CODCAT', 'SECTOR', 'DOCTIT', 'NROPAR', 'NOMRGT', 'NUMRGT', 'RESOSI', 'FECMOD', 'FECONT', 'ANOTORG'], 'string', 'max' => 100],
             [['DNIREG'], 'string', 'max' => 8],
-            [['OBSERV', 'GCLOUD'], 'string', 'max' => 200],
+            [['OBSERV','departamento_aut','provincia_aut','distrito_aut', 'GCLOUD'], 'string', 'max' => 200],
         ];
     }
 
@@ -120,6 +123,9 @@ class Autorizacionesmod extends \yii\db\ActiveRecord
             'OBSERV' => 'Llenar cualquier tipo de observación significativa',
             'GCLOUD' => 'Link del expediente en la nube',
             'id_usuario' => 'Id Usuario',
+            'departamento_aut' => 'Departamento',
+            'provincia_aut' => 'Provincia',
+            'distrito_aut' => 'Distrito',
             'fecha_registro' => 'Fecha Registro',
             
         ];

@@ -5,6 +5,8 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use backend\models\Constantesmod;
 use backend\models\UbigeoPeruDepartments;
+use backend\models\UbigeoPeruProvinces;
+use backend\models\UbigeoPeruDistricts;
 
 
 /* @var $this yii\web\View */
@@ -166,14 +168,55 @@ use backend\models\UbigeoPeruDepartments;
                             <fieldset>
                                 <div class="form-card">
                                     <div class="row">
+                                        
+
+
                                         <div class="col-md-6">
-                                            <?= $form ->field($model, 'NOMDIS')->dropDownList(
-                                            ArrayHelper::map(Constantesmod::find()->where(['campo'=>'NOMDIS','tabla'=>'ddautorizaciones'])->all(),'CODE','DESCRIPCION'),
-                                            [
-                                            'prompt'=>'Seleccionar...',
-                                            ]) ;
+                                            <?php 
+                                            //para crear campo combo
+                                            echo $form ->field($model,'departamento_aut')->dropDownList(
+                                                ArrayHelper::map(UbigeoPeruDepartments::find()->all(), 'id','name'),
+                                                ['prompt'=>'Seleccionar...',
+                                                'onchange'=>'
+                                                    $.post("provincia?id='.'"+$(this).val(),function(data){ console.log(data); $("select#autorizacionesmod-provincia_aut").html(data);});'
+                                                    ]) ;
+                                            
+                                               
                                             ?>
                                         </div>
+                                      
+                                        <div class="col-md-6">
+                                            <?php 
+                                            //para crear campo combo
+                                            echo $form ->field($model,'provincia_aut')->dropDownList(
+                                                ArrayHelper::map(UbigeoPeruProvinces::find()->all(), 'id','name'),
+                                                ['prompt'=>'Seleccionar...',
+                                                'onchange'=>'
+                                                    $.post("distrito?id='.'"+$(this).val(),function(data){ console.log(data); $("select#autorizacionesmod-distrito_aut").html(data);});'
+                                                   
+                                                
+                                                
+                                                ]
+                                            );
+                                               
+                                            ?>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <?php 
+                                            //para crear campo combo
+                                            echo $form ->field($model,'distrito_aut')->dropDownList(
+                                                ArrayHelper::map(UbigeoPeruDistricts::find()->all(), 'id','name'),
+                                                ['prompt'=>'Seleccionar...']
+                                            );
+                                               
+                                            ?>
+                                        </div>
+
+
+
+
+
 
                                         <div class="col-md-6">
                                             <?= $form->field($model, 'DOCTIT')->textInput(['maxlength' => true]) ?>

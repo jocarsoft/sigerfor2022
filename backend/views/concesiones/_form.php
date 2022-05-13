@@ -80,6 +80,7 @@ use backend\models\UbigeoPeruDistricts;
                                                 ['prompt'=>'Seleccionar...',
                                                 'onchange'=>'
                                                     $.post("distrito?id='.'"+$(this).val(),function(data){ console.log(data); $("select#concesionesmod-distrito_co").html(data);});'
+                                                   
                                                 
                                                 
                                                 ]
