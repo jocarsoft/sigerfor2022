@@ -27,9 +27,13 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'NOMREL') ?>
 
+    <?php // echo $form->field($model, 'NOMRELD') ?>
+
     <?php // echo $form->field($model, 'TIPDOC') ?>
 
     <?php // echo $form->field($model, 'NRODOC') ?>
+    
+    <?php // echo $form->field($model, 'DNIRE') ?>
 
     <?php // echo $form->field($model, 'NOMCCN') ?>
 
