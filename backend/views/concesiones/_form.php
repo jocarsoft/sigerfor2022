@@ -166,9 +166,9 @@ use backend\models\UbigeoPeruDistricts;
 
                                             <div class="col-md-6">
                                                 <?= $form->field($model, 'DNIRE')->widget(\yii\widgets\MaskedInput::class, [
-                                                // 'mask' => '99999999',
+                                                // 'mask' => '999999999999',
                                                     'mask' => '9',
-                                                        'clientOptions' => ['repeat' => 8, 'greedy' => false]
+                                                        'clientOptions' => ['repeat' => 12, 'greedy' => false]
 
                                                 ]) 
                                                 ?>
@@ -181,9 +181,9 @@ use backend\models\UbigeoPeruDistricts;
 
                                             <div class="col-md-6">
                                                 <?= $form->field($model, 'DNIRED')->widget(\yii\widgets\MaskedInput::class, [
-                                                // 'mask' => '99999999',
+                                                // 'mask' => '999999999999',
                                                     'mask' => '9',
-                                                        'clientOptions' => ['repeat' => 8, 'greedy' => false]
+                                                        'clientOptions' => ['repeat' => 12, 'greedy' => false]
 
                                                 ]) 
                                                 ?>

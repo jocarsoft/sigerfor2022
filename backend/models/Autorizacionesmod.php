@@ -13,6 +13,8 @@ use Yii;
  * @property int|null $ASIGNA
  * @property string|null $NOMTIT
  * @property string|null $NOMREL
+ * @property string|null $NOMRELD
+ * @property string|null $DNIRE
  * @property int|null $TIPDOC
  * @property string|null $NRODOC
  * @property string|null $NOMCCN
@@ -71,7 +73,7 @@ class Autorizacionesmod extends \yii\db\ActiveRecord
             [['ASIGNA', 'TIPDOC', 'NOMDIS', 'CODACT', 'SITUAC', 'ESTMOD', 'ESTCON', 'ESTOSI', 'TIPANB', 'DESTIN', 'id_usuario'], 'integer'],
             [['FECLEG', 'FECINI', 'FECTER', 'FECCON', 'FECOSI', 'fecha_registro'], 'safe'],
             [['SUPAPR', 'SUPRES', 'PAGO'], 'number'],
-            [['SEDDSC','NUMAUT', 'NOMTIT', 'NOMREL', 'NRODOC', 'NOMCCN', 'DOCLEG', 'CODCAT', 'SECTOR', 'DOCTIT', 'NROPAR', 'NOMRGT', 'NUMRGT', 'RESOSI', 'FECMOD', 'FECONT', 'ANOTORG'], 'string', 'max' => 100],
+            [['SEDDSC','NUMAUT', 'NOMTIT', 'NOMREL', 'NOMRELD','NRODOC','DNIRE', 'NOMCCN', 'DOCLEG', 'CODCAT', 'SECTOR', 'DOCTIT', 'NROPAR', 'NOMRGT', 'NUMRGT', 'RESOSI', 'FECMOD', 'FECONT', 'ANOTORG'], 'string', 'max' => 100],
             [['DNIREG'], 'string', 'max' => 8],
             [['OBSERV','departamento_aut','provincia_aut','distrito_aut', 'GCLOUD'], 'string', 'max' => 200],
         ];
@@ -91,8 +93,10 @@ class Autorizacionesmod extends \yii\db\ActiveRecord
             'ASIGNA' => 'Espacio territorial donde se otorga la autorizacion',
             'NOMTIT' => 'Nombre del titular del predio privado o de la comunidad',
             'NOMREL' => 'Nombre del representante legal',
+            'NOMRELD' => 'Nombre del representante legal 2',
             'TIPDOC' => 'Tipo de documento de identidad del titular o del representante legal',
             'NRODOC' => 'Número del documento del titular o del representante legal',
+            'DNIRE' => 'DNI o RUC del representante legal 2',
             'NOMCCN' => 'Nombre de la comunidad o denominación del predio',
             'DOCLEG' => 'Documento legal que aprueba la autorización',
             'FECLEG' => 'Fecha de documento de aprobación',

@@ -16,6 +16,8 @@ use Yii;
  * @property string|null $NOMREL
  * @property string|null $NOMRELU
  * @property string|null $NOMRELD
+ * @property string|null $DNIRE 
+ * @property string|null $DNIRED
  * @property int|null $TIPDOC
  * @property string|null $NRODOC
  * @property string|null $DOMIC
@@ -68,7 +70,7 @@ class Permisosmod extends \yii\db\ActiveRecord
             [['NUMRUC', 'TIPDOC', 'CATPER', 'CODACT', 'DOCTIT', 'NIVAPR', 'TDLEG', 'EXTEN', 'SITUAC', 'ESTCON', 'ESTOSI', 'id_usuario'], 'integer'],
             [['SUPAPR'], 'number'],
             [['FECLEG', 'FECINI', 'FECTER', 'FECON', 'FECOSI', 'fecha_registro'], 'safe'],
-            [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL','NOMRELU','NOMRELD', 'NRODOC', 'DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'RESAUT', 'RESOSI', 'OBSERV'], 'string', 'max' => 100],
+            [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL','NOMRELU','NOMRELD', 'NRODOC', 'DNIRE', 'DNIRED','DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'RESAUT', 'RESOSI', 'OBSERV'], 'string', 'max' => 100],
             [['ASIGNA','GCLOUD'], 'string', 'max' => 200],
             [['FECONT', 'ANOTORG'], 'string', 'max' => 45],
         ];
@@ -88,9 +90,11 @@ class Permisosmod extends \yii\db\ActiveRecord
             'ASIGNA' => 'Asigna Espacio territorial donde se otorga el permiso',
             'NOMTIT' => 'Razón Social (Persona Jurídica)  o Nombre (Persona natural) del titular del permiso',
             'NUMRUC' => 'Número de RUC del titular',
-            'NOMREL' => 'Nombre del Representante legal 1',
+            'NOMREL' => 'Nombre del Representante legal ',
             'NOMRELU' => 'Nombre del Representante legal 2',
             'NOMRELD' => 'Nombre del Representante legal 3',
+            'DNIRE' => 'DNI O RUC del representante legal 2 ',
+            'DNIRED' => 'DNI O RUC del representante legal 3 ',
             'TIPDOC' => 'Tipo de documento de identidad del titular (Si es persona natural) o del representante legal (si es persona jurídica)',
             'NRODOC' => 'Número de documento de identidad del titular (Si es persona natural) o del representante legal (si es persona jurídica)',
             'DOMIC' => 'Domicilio para notificación',

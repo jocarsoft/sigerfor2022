@@ -132,6 +132,22 @@ use backend\models\UbigeoPeruDistricts;
                                         </div>
 
                                         <div class="col-md-6">
+                                        <?= $form->field($model, 'NOMRELD')->textInput(['maxlength' => true]) ?>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            
+                                            <?= $form->field($model, 'DNIRE')->widget(\yii\widgets\MaskedInput::class, [
+                                               // 'mask' => '999999999999',
+                                                'mask' => '9',
+                                                    'clientOptions' => ['repeat' => 12, 'greedy' => false]
+
+                                            ]) 
+                                            ?>
+
+                                        </div>
+
+                                        <div class="col-md-6">
                                             <?= $form->field($model, 'NOMCCN')->textInput(['maxlength' => true]) ?>
                                         </div>
 
