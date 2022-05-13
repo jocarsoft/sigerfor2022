@@ -9,7 +9,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use backend\models\Constantesmod;
-
+use backend\models\UbigeoPeruProvinces;
+use backend\models\UbigeoPeruDistricts;
+use backend\models\UbigeoPeruDepartments;
 use yii\filters\AccessControl;
 
 /**
@@ -34,7 +36,7 @@ class PermisosmodController extends Controller
                             'allow' => true,            
                         ],            
                         [            
-                            'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'], // add all actions to take guest to login page            
+                            'actions' => ['logout', 'index', 'view', 'create', 'update','distrito','provincia', 'delete'], // add all actions to take guest to login page            
                             'allow' => true,            
                             'roles' => ['@'],            
                         ],            
@@ -153,6 +155,79 @@ class PermisosmodController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionProvincia($id)
+    {
+        $contador = UbigeoPeruProvinces::find()
+        ->andFilterWhere(['like', 'department_id',$id])
+        ->count();
+        
+        $query = UbigeoPeruProvinces::find()->andFilterWhere(['like', 'department_id',$id])->all();
+                
+       // $contardistrito = Constantesmod::find()
+          //  ->like(['code'=>$id])
+         //   ->count();
+
+          /*  $distrito = Constantesmod::find()
+            ->where(['code_'=>$id])
+            ->all();*/
+
+            if($contador>0){
+
+              $i= 0;      
+
+            foreach($query as $query2){
+
+              echo "<option value='".$query2->id."'>".$query2->name."</option>";
+                    }
+            }
+             else {
+            echo "<option>-</option>";
+            
+                }
+    }
+
+
+    public function actionDistrito($id)
+    {
+        $contador = UbigeoPeruDistricts::find()
+        ->andFilterWhere(['like', 'province_id',$id])
+        ->count();
+        
+        $query = UbigeoPeruDistricts::find()->andFilterWhere(['like', 'province_id',$id])->all();
+                
+       // $contardistrito = Constantesmod::find()
+          //  ->like(['code'=>$id])
+         //   ->count();
+
+          /*  $distrito = Constantesmod::find()
+            ->where(['code_'=>$id])
+            ->all();*/
+
+            if($contador>0){
+
+              $i= 0;      
+
+            foreach($query as $query2){
+
+              echo "<option value='".$query2->id."'>".$query2->name."</option>";
+                    }
+            }
+             else {
+            echo "<option>-</option>";
+            
+                }
+    }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Deletes an existing Permisosmod model.

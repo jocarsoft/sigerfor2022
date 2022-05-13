@@ -49,6 +49,9 @@ use Yii;
  * @property int|null $id_usuario
  * @property string|null $fecha_registro
  * @property string|null $FECONT
+ * @proty string|null $departamento_per
+ * @proty string|null $provincia_per
+ * @proty string|null $distrito_per
  * @property string|null $ANOTORG
  */
 class Permisosmod extends \yii\db\ActiveRecord
@@ -71,7 +74,7 @@ class Permisosmod extends \yii\db\ActiveRecord
             [['SUPAPR'], 'number'],
             [['FECLEG', 'FECINI', 'FECTER', 'FECON', 'FECOSI', 'fecha_registro'], 'safe'],
             [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL','NOMRELU','NOMRELD', 'NRODOC', 'DNIRE', 'DNIRED','DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'RESAUT', 'RESOSI', 'OBSERV'], 'string', 'max' => 100],
-            [['ASIGNA','GCLOUD'], 'string', 'max' => 200],
+            [['ASIGNA','departamento_per','provincia_per','distrito_per','GCLOUD'], 'string', 'max' => 200],
             [['FECONT', 'ANOTORG'], 'string', 'max' => 45],
         ];
     }
@@ -124,6 +127,9 @@ class Permisosmod extends \yii\db\ActiveRecord
             'OBSERV' => 'Observaciones',
             'GCLOUD' => 'Link del expediente en la nube',
             'id_usuario' => 'Id Usuario',
+            'departamento_per' => 'Departamento',
+            'provincia_per' => 'Provincia',
+            'distrito_per' => 'Distrito',
             'fecha_registro' => 'Fecha Registro',
             
         ];

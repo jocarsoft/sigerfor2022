@@ -18,7 +18,7 @@ class PermisosmodSearch extends Permisosmod
     {
         return [
             [['id', 'ASIGNA', 'NUMRUC', 'TIPDOC', 'CATPER', 'CODACT', 'DOCTIT', 'NIVAPR', 'TDLEG', 'EXTEN', 'SITUAC', 'ESTCON', 'ESTOSI', 'id_usuario'], 'integer'],
-            [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL', 'NRODOC', 'DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'FECLEG', 'FECINI', 'FECTER', 'RESAUT', 'FECON', 'RESOSI', 'FECOSI', 'OBSERV', 'GCLOUD', 'fecha_registro'], 'safe'],
+            [['SEDDSC', 'NUMPER', 'NOMTIT', 'NOMREL', 'NRODOC', 'DOMIC', 'NOMCCN', 'CODCAT', 'NROPAR', 'SECTOR', 'NOMDIS', 'DOCLEG', 'FECLEG', 'FECINI', 'FECTER', 'RESAUT', 'FECON', 'RESOSI', 'FECOSI', 'OBSERV','departamento_per','provincia_per','distrito_per', 'GCLOUD', 'fecha_registro'], 'safe'],
             [['SUPAPR'], 'number'],
         ];
     }
@@ -80,6 +80,9 @@ class PermisosmodSearch extends Permisosmod
             'FECOSI' => $this->FECOSI,
             'id_usuario' => $this->id_usuario,
             'fecha_registro' => $this->fecha_registro,
+            'departamento_per' => $this->departamento_per,
+            'provincia_per' => $this->provincia_per,
+            'distrito_per' => $this->distrito_per,
         ]);
 
         $query->andFilterWhere(['like', 'SEDDSC', $this->SEDDSC])
@@ -97,7 +100,11 @@ class PermisosmodSearch extends Permisosmod
             ->andFilterWhere(['like', 'RESAUT', $this->RESAUT])
             ->andFilterWhere(['like', 'RESOSI', $this->RESOSI])
             ->andFilterWhere(['like', 'OBSERV', $this->OBSERV])
-            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD]);
+            ->andFilterWhere(['like', 'GCLOUD', $this->GCLOUD])
+            ->andFilterWhere(['like', 'departamento_per', $this->departamento_per])
+            ->andFilterWhere(['like', 'provincia_per', $this->provincia_per])
+            ->andFilterWhere(['like', 'distrito_per', $this->distrito_per])
+            ;
 
         return $dataProvider;
     }
