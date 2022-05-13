@@ -63,8 +63,11 @@ use backend\models\UbigeoPeruDistricts;
                                             //para crear campo combo
                                             echo $form ->field($model,'departamento_co')->dropDownList(
                                                 ArrayHelper::map(UbigeoPeruDepartments::find()->all(), 'id','name'),
-                                                ['prompt'=>'Seleccionar...']
-                                            );
+                                                ['prompt'=>'Seleccionar...',
+                                                'onchange'=>'
+                                                    $.post("provincia?id='.'"+$(this).val(),function(data){ console.log(data); $("select#concesionesmod-provincia_co").html(data);});'
+                                                    ]) ;
+                                            
                                                
                                             ?>
                                         </div>
@@ -74,7 +77,12 @@ use backend\models\UbigeoPeruDistricts;
                                             //para crear campo combo
                                             echo $form ->field($model,'provincia_co')->dropDownList(
                                                 ArrayHelper::map(UbigeoPeruProvinces::find()->all(), 'id','name'),
-                                                ['prompt'=>'Seleccionar...']
+                                                ['prompt'=>'Seleccionar...',
+                                                'onchange'=>'
+                                                    $.post("distrito?id='.'"+$(this).val(),function(data){ console.log(data); $("select#concesionesmod-distrito_co").html(data);});'
+                                                
+                                                
+                                                ]
                                             );
                                                
                                             ?>
